@@ -10,9 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_110316) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_114844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.time "time"
+    t.string "review"
+    t.float "rating"
+    t.bigint "user_id", null: false
+    t.bigint "package_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.index ["package_id"], name: "index_bookings_on_package_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_messages_on_booking_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "musicians", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nickname"
+    t.string "location"
+    t.text "description"
+    t.string "type_of_event"
+    t.string "type_of_musician"
+    t.string "youtube_link"
+    t.string "instagram_link"
+    t.string "soundcloud_link"
+    t.string "spotify_link"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_musicians_on_user_id"
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.float "price"
+    t.float "hours"
+    t.text "description"
+    t.bigint "musician_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["musician_id"], name: "index_packages_on_musician_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +74,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_110316) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "packages"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "messages", "bookings"
+  add_foreign_key "messages", "users"
+  add_foreign_key "musicians", "users"
+  add_foreign_key "packages", "musicians"
 end
