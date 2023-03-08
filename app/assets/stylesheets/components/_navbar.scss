@@ -1,7 +1,19 @@
 .navbar-lewagon {
+  width: 100%;
   justify-content: space-between;
-  background: white;
+  background: $brown-secondary;
+  position: fixed;
+  top: 0px;
+  z-index:1;
+
+  .nav-link {
+    color: $orange_primary;
+  }
+   .nav-link:hover {
+    color: $rose-secondary;
+   }
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;

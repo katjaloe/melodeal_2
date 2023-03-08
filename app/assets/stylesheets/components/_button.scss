@@ -1,35 +1,41 @@
 .btn-first {
-  color: white;
-  background: #F5783F;
-  border: 1px solid #F5783F;
-  width: 150px;
-  height: 40px;
+  color: $rose-secondary;
+  background: $orange_primary;
+  border: 1px solid $orange_primary;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
   border-radius: 15px;
   font-weight: light;
   transition: background 0.3s ease;
 }
 
 .btn-first:hover {
-  background: #F5783F;
+  background: $orange_primary;
   opacity: 0.8;
 }
 
 .btn-second-orange {
-  color: #F5783F;
-  border: 1px solid #F5783F;
-  padding: 8px 24px;
-  width: 150px;
-  height: 40px;
+  color: $orange_primary;
+  border: 1px solid $orange_primary;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
   border-radius: 15px;
   font-weight: light;
 }
 
+.btn-second-orange:hover {
+  color: $rose-secondary;
+  border-color: $rose-secondary;
+}
+
 .btn-second-green {
-  color: #D5E2B6;
-  border: 1px solid #D5E2B6;
-  padding: 8px 24px;
-  width: 150px;
-  height: 40px;
+  color: $green-contrast;
+  border: 1px solid $green-contrast;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
   border-radius: 15px;
   font-weight: light;
 }
