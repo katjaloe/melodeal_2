@@ -1,0 +1,35 @@
+.btn-first {
+  color: white;
+  background: #F5783F;
+  border: 1px solid #F5783F;
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+  transition: background 0.3s ease;
+}
+
+.btn-first:hover {
+  background: #F5783F;
+  opacity: 0.8;
+}
+
+.btn-second-orange {
+  color: #F5783F;
+  border: 1px solid #F5783F;
+  padding: 8px 24px;
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+}
+
+.btn-second-green {
+  color: #D5E2B6;
+  border: 1px solid #D5E2B6;
+  padding: 8px 24px;
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+}
