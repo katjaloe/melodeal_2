@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 body {
-//   background-color: $rose-secondary;
+background-color: $rose-secondary;
 font-family: $body-font;
 font-weight: light;
 }
@@ -11,39 +11,78 @@ h1 {
   font-weight: light;
 }
 
+// .container {
+//   max-width: 900px;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
+
 // Banner
 .banner {
-  // margin-top: 30px;
-  background-size: cover;
-  background-position: center;
-  padding: 75px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  // position: center;
+  // object-fit: none;
+  // background-size: 100vw 700px;
+  // background-repeat: no-repeat;
+  // width: 1511px;
+  // height: 496px;
+  // left: 0px;
+  // top: 80px;
+  // padding: 75px 0 50px 0;
+  // margin: auto;
 }
 
 .banner h1 {
   font-family: $headers-font;
-  color: $yellow;
-  margin: 0;
-  text-align: center;
+  color: $orange_primary;
+  padding-left: 12px;
   font-size: 38px;
   font-weight: bold;
+  text-align: justify;
 }
 
-.banner p {
+.banner h2 {
   font-family: $headers-font;
   font-size: 30px;
-  text-align: center;
-  color: $light-yellow;
+  color: $rose-secondary;
+  padding-left: 12px;
 }
 
-.banner-container {
-  width: 1100px;
-  margin: auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
+// .banner-container {
+//   width: 1100px;
+//   margin: auto;
+//   padding-top: 25px;
+//   padding-bottom: 25px;
+//   display: flex;
+//   border: 2px solid $brown-secondary;
+// }
+
+// Intro Text
+.intro_text_container {
+  background-color: $rose-secondary;
+  margin-top: 70px;
+  margin-bottom: 200px;
+}
+
+.intro_text h3 {
+  font-family: $body-font;
+  font-size: 25px;
+  color: $dark-brown;
+  padding-left: 12px;
+}
+
+.intro_text h4 {
+  font-family: $body-font;
+  font-size: 20px;
+  color: $dark-brown;
+  padding-left: 12px;
   display: flex;
-  background-color: $background-gray;
-  border: 2px solid $pink;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 16px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 772px;
+  height: 144px;
+  left: 24px;
+  top: 732px;
 }

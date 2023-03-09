@@ -7,10 +7,30 @@
   <body>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1621368286550-f54551f39b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
-  <div class=“container”>
-    <h1>Welcome to MeloDeal</h1>
-    <h2>We connect young professional musicians with you</h2>
-    <%# <%= render partial: "pages/shared/search_button" %>
+    <div class="banner-info">
+      <h1>Welcome to MeloDeal</h1>
+      <h2>Find a Musician.</h2>
+    </div>
+    <div class="search_form_container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-4 form-devise">
+          <%= simple_form_for :search, url: root_path, method: :get, class: "search-form-control form-group" do |f| %>
+            <%= f.input :location, collection: [ "every", "city", "withing", "our", "database" ], prompt: "Where...?", :required => false %>
+            <%= f.input :type_of_event, collection: ["every", "type", "of", "event", "in", "our", "database" ], prompt: "Which type of event...?", :required => false%>
+            <%= f.date_field :date, label: "Date", prompt: "Select a date" %>
+            <%= f.button :submit, "Find!", class: "btn btn-first w-100 mt-4" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="intro_text">
+  <div class="intro_text_container">
+  <h3><strong>Our Purpose</strong></h3>
+  <h4>Are you hosting an event and looking for a young professional musician?<br>
+  You are studying music and want paid experience?<br>
+  Good news, you've both come to the right place.</h4>
 </div>
 </div>
 </body>
