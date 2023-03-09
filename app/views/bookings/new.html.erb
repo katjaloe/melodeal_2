@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Request your musicians</h1>
+
+  <%= simple_form_for [@musicians, @booking] do |f| %>
+    <%= f.input :location, class: "input-field", input_html: { size: 20}%>
+    <p>Date: <%= f.date_field :date, class: "input-field" %>
+    Time: <%= f.time_field :time, class: "input-field" %>
+    <%= f.submit class: "btn btn-flat"%> </p>
+  <% end %>
+
+</div>
