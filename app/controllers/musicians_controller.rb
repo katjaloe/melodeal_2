@@ -1,4 +1,4 @@
-class MusicianController < ApplicationController
+class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
