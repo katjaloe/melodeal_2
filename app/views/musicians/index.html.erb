@@ -1,0 +1,6 @@
+<ul>
+<% @musicians.each do |musician|%>
+<li><%= musician.first_name %></li>
+<%= image_tag(musician.photo) %>
+<% end %>
+</ul>
