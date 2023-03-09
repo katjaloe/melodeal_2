@@ -1,76 +1,46 @@
-.cards-container {
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 18px;
+  grid-gap: 16px;
 }
 
+.card-category {
+  width: 380px;
+  height: 250px;
+  background-position: right;
+  background-size: contain;
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
-// .card {
-//   background-color: $card-background-gray;
-//   border: 2px solid $yellow;
-//   border-radius: 15px;
-//   box-shadow: 0 0 5px $light-gray;
-//   width: 300px;
-//   height: 400px;
-//   padding: 20px;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
-// }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-// .card-image-container {
-//   width: 285px;
-//   height: 250px;
-//   overflow: hidden;
-//   text-align: center;
-//   margin: 5px 5px 5px 5px;
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-// }
-// .card img {
-//   object-fit: cover;
-//   // object-position: center;
-//   height: 100%;
-//   width: 100%;
-//   border-radius: 15px;
-// }
-
-// .card-content h2 {
-//   font-size: 24px;
-//   font-weight: bolder;
-//   margin: 0;
-//   color: $black;
-//   text-align: center;
-//   padding: 10px;
-// }
-// .card-content h3 {
-//   font-size: 18px;
-//   font-weight: lighter;
-//   margin: 0;
-//   color: $yellow;
-//   text-align: center;
-// }
-
-// .card-content p {
-//   font-size: 16px;
-//   font-weight: lighter;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 20px;
-//   margin-top: 20px;
-//   padding: 15px;
-//   // overflow-wrap: break-word;
-//   overflow: hidden;
-//   white-space: nowrap; /* Don't forget this one */
-//   text-overflow: ellipsis;
-//   color: $light-gray;
-
-// }
-
-// .card-category .card-info {
-//   padding: 16px;
-// }
-// // .cards-container {
-// //   display: flex;
-// // }
-
-// #map {
-//   height: 100vh;
-// }
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
