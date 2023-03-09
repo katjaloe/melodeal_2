@@ -1,10 +1,13 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
   width: 100%;
   justify-content: space-between;
   background: $brown-secondary;
   z-index:1;
   color: #F5783F;
-      display: flex;
+  display: flex;
 }
 
 .footer-links {
@@ -21,6 +24,10 @@
 .footer-links a:hover {
   opacity: 1;
   color: $rose-secondary;
+}
+
+.footer-copyright {
+  margin: auto 5px auto;
 }
 
 .wrapper {

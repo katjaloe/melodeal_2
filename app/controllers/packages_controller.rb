@@ -17,6 +17,8 @@ class PackagesController < ApplicationController
     end
   end
 
+  
+
   private
 
   def set_musician
