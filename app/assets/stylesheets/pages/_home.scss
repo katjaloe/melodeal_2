@@ -11,27 +11,11 @@ h1 {
   font-weight: light;
 }
 
-// .container {
-//   max-width: 900px;
-//   margin-top: 20px;
-//   margin-bottom: 20px;
-// }
-
-// Banner
 .banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // position: center;
-  // object-fit: none;
-  // background-size: 100vw 700px;
-  // background-repeat: no-repeat;
-  // width: 1511px;
-  // height: 496px;
-  // left: 0px;
-  // top: 80px;
-  // padding: 75px 0 50px 0;
-  // margin: auto;
+
 }
 
 .banner h1 {
@@ -39,7 +23,6 @@ h1 {
   color: $orange_primary;
   font-size: 38px;
   font-weight: bold;
-  // text-align: justify;
 }
 
 .banner h2 {
@@ -47,15 +30,6 @@ h1 {
   font-size: 30px;
   color: $rose-secondary;
 }
-
-// .banner-container {
-//   width: 1100px;
-//   margin: auto;
-//   padding-top: 25px;
-//   padding-bottom: 25px;
-//   display: flex;
-//   border: 2px solid $brown-secondary;
-// }
 
 .intro_text_container {
   background-color: $rose-secondary;
