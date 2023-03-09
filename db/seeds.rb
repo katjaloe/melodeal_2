@@ -19,10 +19,10 @@ User.destroy_all
 Package.destroy_all
 
 puts "Creating users"
-colleen = User.create!(first_name: "Colleen", last_name: "Brown", nickname: "Colleen", email: "colleen@colleen.com", password: "123456")
-katja = User.create!(first_name: "Katja", last_name: "Löffler", nickname: "Katja", email: "katja@katja.com", password: "123456")
-louise = User.create!(first_name: "Louise", last_name: "Wedel", nickname: "Louise", email: "louise@louise.com", password: "123456")
-besher = User.create!(first_name: "Besher", last_name: "Albalkhi", nickname: "Besher",email: "besher@besher.com", password: "123456")
+colleen = User.create!(first_name: "Colleen", last_name: "Brown", email: "colleen@colleen.com", password: "123456")
+katja = User.create!(first_name: "Katja", last_name: "Löffler", email: "katja@katja.com", password: "123456")
+louise = User.create!(first_name: "Louise", last_name: "Wedel", email: "louise@louise.com", password: "123456")
+besher = User.create!(first_name: "Besher", last_name: "Albalkhi", email: "besher@besher.com", password: "123456")
 puts "created users"
 
 puts "Creating Musicians"
@@ -36,7 +36,7 @@ puts "Creating Musicians"
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
     youtube_link: Faker::Internet.url,
-    spotifiy_link: Faker::Internet.url,
+    spotify_link: Faker::Internet.url,
     user: colleen
   )
   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
@@ -53,7 +53,7 @@ end
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
     youtube_link: Faker::Internet.url,
-    spotifiy_link: Faker::Internet.url,
+    spotify_link: Faker::Internet.url,
     user: louise
   )
   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
@@ -70,7 +70,7 @@ end
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
     youtube_link: Faker::Internet.url,
-    spotifiy_link: Faker::Internet.url,
+    spotify_link: Faker::Internet.url,
     user: besher
   )
   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
@@ -87,7 +87,7 @@ end
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
     youtube_link: Faker::Internet.url,
-    spotifiy_link: Faker::Internet.url,
+    spotify_link: Faker::Internet.url,
     user: katja
   )
   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
