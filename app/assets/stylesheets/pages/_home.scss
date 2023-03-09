@@ -20,7 +20,8 @@ h1 {
 // Banner
 .banner {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   // position: center;
   // object-fit: none;
   // background-size: 100vw 700px;
@@ -36,17 +37,15 @@ h1 {
 .banner h1 {
   font-family: $headers-font;
   color: $orange_primary;
-  padding-left: 12px;
   font-size: 38px;
   font-weight: bold;
-  text-align: justify;
+  // text-align: justify;
 }
 
 .banner h2 {
   font-family: $headers-font;
   font-size: 30px;
   color: $rose-secondary;
-  padding-left: 12px;
 }
 
 // .banner-container {
@@ -58,7 +57,6 @@ h1 {
 //   border: 2px solid $brown-secondary;
 // }
 
-// Intro Text
 .intro_text_container {
   background-color: $rose-secondary;
   margin-top: 70px;
@@ -85,4 +83,12 @@ h1 {
   height: 144px;
   left: 24px;
   top: 732px;
+}
+
+.search_form_container {
+  padding: 25px;
+}
+
+.banner-info {
+  padding: 16px;
 }

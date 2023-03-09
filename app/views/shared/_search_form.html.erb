@@ -1,6 +1,5 @@
-<div class="search_form_container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-4 form-devise">
+<div class="row justify-content-center">
+    <div class="col-12 form-devise">
       <%= simple_form_for :search, url: root_path, method: :get, class: "search-form-control form-group" do |f| %>
         <%= f.input :location, collection: [ "every", "city", "withing", "our", "database" ], prompt: "Where...?", :required => false %>
         <%= f.input :type_of_event, collection: ["every", "type", "of", "event", "in", "our", "database" ], prompt: "Which type of event...?", :required => false%>
@@ -9,4 +8,3 @@
       <% end %>
     </div>
   </div>
-</div>
