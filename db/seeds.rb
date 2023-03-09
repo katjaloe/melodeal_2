@@ -13,6 +13,7 @@ puts "Deleting current Database entries...!"
 
 type_of_event = ["wedding ceremony", "wedding party", "funeral", "vernisace"]
 type_of_musician = ["Band", "Piano player", "Violinist", "Vocal"]
+location = ["Berlin", "Hamburg", "Köln", "Stuttgart", "Hannover"]
 
 Musician.destroy_all
 User.destroy_all
@@ -32,7 +33,7 @@ puts "Creating Musicians"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -49,7 +50,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -66,7 +67,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -84,7 +85,7 @@ end
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
     location: Faker::Address.city,
-    description: Faker::Music.instrument,
+    description: location.sample,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
     youtube_link: Faker::Internet.url,
