@@ -1,0 +1,14 @@
+<%= link_to musician, class: "main-card" do %>
+  <div class="card-image-container">
+    <div class="card-img">
+      <%= image_tag(musician.photo) %>
+    </div>
+  </div>
+
+  <div class="card-contend">
+    <h3><%=musician.first_name%></h3>
+    <h3><%=musician.last_name%></h3>
+    <p><%= musician.type_of_musician%></p>
+    <p><%= musician.description%></p>
+  </div>
+<% end %>

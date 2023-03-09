@@ -2,7 +2,7 @@ class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
-    @musician = Musician.all
+    @musicians = Musician.all
   end
 
   def show

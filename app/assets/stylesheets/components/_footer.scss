@@ -2,8 +2,6 @@
   width: 100%;
   justify-content: space-between;
   background: $brown-secondary;
-  position: fixed;
-  bottom: 0px;
   z-index:1;
   color: #F5783F;
       display: flex;
@@ -23,4 +21,12 @@
 .footer-links a:hover {
   opacity: 1;
   color: $rose-secondary;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 50px;
 }
