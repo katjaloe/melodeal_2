@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 form-devise">
+      <%= simple_form_for :search, url: root_path, method: :get, class: "search-form-control form-group" do |f| %>
+        <%= f.input :location, collection: [ "every", "city", "withing", "our", "database" ], prompt: "Where...?", :required => false %>
+        <%= f.input :type_of_event, collection: ["every", "type", "of", "event", "in", "our", "database" ], prompt: "Which type of event...?", :required => false%>
+        <%= f.date_field :date, label: "Date", prompt: "Select a date" %>
+        <%= f.button :submit, "Find!", class: "btn btn-first w-100 mt-4" %>
+      <% end %>
+    </div>
+  </div>
+</div>

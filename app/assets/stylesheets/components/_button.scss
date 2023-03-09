@@ -1,0 +1,41 @@
+.btn-first {
+  color: $rose-secondary;
+  background: $orange_primary;
+  border: 1px solid $orange_primary;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+  transition: background 0.3s ease;
+}
+
+.btn-first:hover {
+  background: $orange_primary;
+  opacity: 0.8;
+}
+
+.btn-second-orange {
+  color: $orange_primary;
+  border: 1px solid $orange_primary;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+}
+
+.btn-second-orange:hover {
+  color: $rose-secondary;
+  border-color: $rose-secondary;
+}
+
+.btn-second-green {
+  color: $green-contrast;
+  border: 1px solid $green-contrast;
+  padding: 4px 16px;
+  // width: 150px;
+  // height: 40px;
+  border-radius: 15px;
+  font-weight: light;
+}
