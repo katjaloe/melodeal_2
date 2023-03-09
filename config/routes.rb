@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/bookings/:id/accept', to: 'bookings#accept', as: 'booking_accept'
+  get '/bookings/:id/decline', to: 'bookings#decline', as: 'booking_decline'
+  get '/bookings/:id/completed', to: 'bookings#completed', as: 'booking_completed'
 end
