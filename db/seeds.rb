@@ -5,3 +5,86 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require "faker"
+require "open-uri"
+
+puts "Deleting current Database entries...!"
+
+type_of_event = ["wedding ceremony", "wedding party", "funeral", "vernisace"]
+type_of_musician = ["Band", "Piano player", "Violinist", "Vocal"]
+
+Musician.destroy_all
+User.destroy_all
+
+puts "Creating users"
+colleen = User.create!(first_name: "Colleen", last_name: "Brown", nickname: "Colleen", email: "colleen@colleen.com", password: "123456")
+katja = User.create!(first_name: "Katja", last_name: "Löffler", nickname: "Katja", email: "katja@katja.com", password: "123456")
+louise = User.create!(first_name: "Louise", last_name: "Wedel", nickname: "Louise", email: "louise@louise.com", password: "123456")
+besher = User.create!(first_name: "Besher", last_name: "Albalkhi", nickname: "Besher",email: "besher@besher.com", password: "123456")
+
+puts "Creating Musicians"
+10.times do
+  musician = Musician.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: Faker::Address.city,
+    type_of_event: type_of_event.sample,
+    type_of_musician: type_of_musician.sample,
+    youtube_link: Faker::Internet.url,
+    spotifiy_link: Faker::Internet.url,
+    user: colleen
+  )
+  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
+  musician.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+end
+
+10.times do
+  musician = Musician.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: Faker::Address.city,
+    type_of_event: type_of_event.sample,
+    type_of_musician: type_of_musician.sample,
+    youtube_link: Faker::Internet.url,
+    spotifiy_link: Faker::Internet.url,
+    user: louise
+  )
+  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
+  musician.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+end
+
+10.times do
+  musician = Musician.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: Faker::Address.city,
+    type_of_event: type_of_event.sample,
+    type_of_musician: type_of_musician.sample,
+    youtube_link: Faker::Internet.url,
+    spotifiy_link: Faker::Internet.url,
+    user: besher
+  )
+  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
+  musician.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+end
+
+
+10.times do
+  musician = Musician.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: Faker::Address.city,
+    type_of_event: type_of_event.sample,
+    type_of_musician: type_of_musician.sample,
+    youtube_link: Faker::Internet.url,
+    spotifiy_link: Faker::Internet.url,
+    user: katja
+  )
+  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
+  musician.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+end
