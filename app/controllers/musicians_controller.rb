@@ -2,7 +2,15 @@ class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
-    @musicians = Musician.all
+    # raise
+    @filter = params["filter"]
+    if @filter.present?
+      @location = @filter["location"]
+      @type_of_event = @filter["type_of_event"]
+      @musicians = Musician.where(location: @location)
+    else
+      @musicians = Musician.all
+    end
   end
 
   def show
