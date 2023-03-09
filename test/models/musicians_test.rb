@@ -1,6 +1,6 @@
 require "test_helper"
 
-class MusicianTest < ActiveSupport::TestCase
+class MusiciansTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

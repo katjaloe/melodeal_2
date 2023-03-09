@@ -1,0 +1,7 @@
+<ul>
+<% @musicians.each do |musician|%>
+<li><%= musician.first_name %></li>
+<%= image_tag(musician.photo) %>
+<%= render "shared/card" %>
+<% end %>
+</ul>

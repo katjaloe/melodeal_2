@@ -1,6 +1,7 @@
 class Musician < ApplicationRecord
   belongs_to :user
   has_many :packages
+  has_one_attached :photo
 
   validates :nickname, presence: true
   validates :location, presence: true
