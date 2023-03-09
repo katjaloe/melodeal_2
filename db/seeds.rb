@@ -26,6 +26,7 @@ besher = User.create!(first_name: "Besher", last_name: "Albalkhi", email: "beshe
 puts "created users"
 
 puts "Creating Musicians"
+
 10.times do
   musicians = Musician.create!(
     first_name: Faker::Name.first_name,
@@ -90,16 +91,23 @@ end
     spotify_link: Faker::Internet.url,
     user: katja
   )
+
   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
   musicians.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
 end
 
 puts "created #{Musician.count} musicians"
 
-2.times do
-  musicians.each do |musician|
-    price = rand(200..300)
-    hours = rand(2..5)
-    packages.each { |package| package.musician.create!(price: price, hours: hours, musician_id: musician.id) }
+puts "creating packages"
+
+Musician.all.each do |musician|
+  2.times do
+    Package.create!(
+      price: rand(200..300),
+      hours: rand(2..5),
+      musician_id: musician.id
+    )
   end
 end
+
+puts "created #{Package.count} packages"
