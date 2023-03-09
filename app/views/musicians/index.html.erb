@@ -1,7 +1,8 @@
-<ul>
-<% @musicians.each do |musician|%>
-<li><%= musician.first_name %></li>
-<%= image_tag(musician.photo) %>
-<%= render "shared/card" %>
-<% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566913485242-694e995731b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dmlvbGluZSUyMHBsYXllcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);">
+   <h1>There we go:</h1>
+</div>
+<div class="cards-container container">
+  <% @musicians.each do |musician|  %>
+      <%= render partial: "shared/card", locals: { musician: musician } %>
+    <% end %>
+</div>
