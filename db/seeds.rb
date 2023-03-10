@@ -13,10 +13,11 @@ puts "Deleting current Database entries...!"
 
 type_of_event = ["wedding ceremony", "wedding party", "funeral", "vernisace"]
 type_of_musician = ["Band", "Piano player", "Violinist", "Vocal"]
+location = ["Berlin", "Hamburg", "Köln", "Stuttgart", "Hannover"]
 
+Package.destroy_all
 Musician.destroy_all
 User.destroy_all
-Package.destroy_all
 
 puts "Creating users"
 colleen = User.create!(first_name: "Colleen", last_name: "Brown", email: "colleen@colleen.com", password: "123456")
@@ -32,7 +33,7 @@ puts "Creating Musicians"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -49,7 +50,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -66,7 +67,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -83,7 +84,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
-    location: Faker::Address.city,
+    location: location.sample,
     description: Faker::Music.instrument,
     type_of_event: type_of_event.sample,
     type_of_musician: type_of_musician.sample,
@@ -101,13 +102,23 @@ puts "created #{Musician.count} musicians"
 puts "creating packages"
 
 Musician.all.each do |musician|
-  2.times do
-    Package.create!(
-      price: rand(200..300),
-      hours: rand(2..5),
-      musician_id: musician.id
-    )
-  end
+  Package.create!(
+    description: "Package Small",
+    price: rand(200..300),
+    hours: rand(1..2),
+    musician_id: musician.id
+  )
 end
+
+Musician.all.each do |musician|
+  Package.create!(
+    description: "Package Large",
+    price: rand(310..500),
+    hours: rand(3..5),
+    musician_id: musician.id
+  )
+end
+
+
 
 puts "created #{Package.count} packages"

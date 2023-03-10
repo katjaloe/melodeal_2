@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row justify-content-center d-grid mt-4">
+    <div class="col-12">
+      <div class="show-card">
+        <div class="cover-photo">
+          <%= image_tag(@musician.photo, class: "profile")%>
+        </div>
+        <h3>
+          <%= @musician.first_name %> <%= @musician.last_name  %>
+        </h3>
+        <div class="flex-container">
+          <div>
+            <p class="about"><%= @musician.type_of_musician %> <br> from <%= @musician.location %></p>
+            <button class="btn btn-first mb-4">Message</button>
+            <button class="btn btn-second-orange mb-4">Following</button>
+            <div class="icons">
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+          </div>
+          <div class="flex-packages">
+            <% @musician.packages.each do |package| %>
+              <div class="package-card">
+                <small><%= package.description %></small>
+                <hr>
+                <p>Price: <%= package.price %></p>
+                <p>Hours: <%= package.hours %></p>
+                <%= link_to "Book!", root_path, class: "btn btn-first" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
