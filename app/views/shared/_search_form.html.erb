@@ -5,10 +5,10 @@
         <%= f.input :location, collection: Musician.pluck(:location).uniq %>
         <%= f.input :type_of_event, collection: Musician.pluck(:type_of_event).uniq %>
         <%# <%= f.input :date, label: "Date", prompt: "Select a date" %>
+
         <%= f.button :submit, "Find!", class: "btn btn-first w-100 mt-4" %>
       <% end %>
     </div>
   </div>
-</div>
 
-<%# url: musicians_path, method: :get, class: "search-form-control form-group" %>
+</div>
