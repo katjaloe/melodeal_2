@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def dashboard
     @user = current_user
-    @bookings = @user.bookings
+    # @bookings = @user.bookings
   end
 end
