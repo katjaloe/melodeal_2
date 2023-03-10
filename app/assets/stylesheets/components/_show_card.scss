@@ -1,15 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
-
 .show-card {
     padding: 15px;
     width: 900px;
     background: $rose-secondary;
     border-radius: 5px;
-    text-align: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
     user-select: none;
     color: $brown-secondary;
+    font-family: $headers-font;
 
+    h3 {
+      font-family: $headers-font;
+      color: $orange_primary;
+      font-size: 38px;
+      font-weight: bold;
+      text-indent: 145px;
+    }
+
+    .about {
+      font-family: $body-font;
+      color: $brown-secondary;
+      font-size: 20px;
+      font-weight: lighter;
+      text-align: left;
+      padding-right: 300px;
+    }
 
 
   //   .btn {
@@ -35,16 +49,17 @@
   //     background: #7ce3ff;
   //     color: #222;
   // }
-
-
 }
+
+
 
 .cover-photo {
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1621368286550-f54551f39b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1586351011807-b79c8ef43057?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
     // background: url(https://i.imgur.com/jxyuizJ.jpeg);
     // opacity: 0.8;
     background-size: cover;
+    background-position: center;
     height: 180px;
     border-radius: 5px 5px 0 0;
 }
@@ -56,29 +71,31 @@
     left: 15px;
     border-radius: 50%;
     border: 1px solid $brown-secondary;
-    // background: $brown-secondary;
     padding: 5px;
+    font: $body-font
 }
 
 .profile-name {
     font-size: 20px;
     margin: 25px 0 0 120px;
     color: $brown-secondary;
+    font: $body-font
 }
 
 .about {
     margin-top: 30px;
     line-height: 1.6;
+    color: $brown-secondary;
+    font: $body-font
 }
-
-
 
 .icons {
     width: 180px;
-    margin: 0 auto 10px;
+    // margin: 0 auto 10px;
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    padding-right: 300px;
 }
 
 .icons i {
@@ -110,6 +127,6 @@
   margin: 10px;
   border: 1px solid $brown-secondary;
   border-radius: 5px;
+  background-color: #ffffff6e
   // display: flex;
-
 }
