@@ -12,7 +12,7 @@
           <div>
             <p class="about"><%= @musician.type_of_musician %> <br> from <%= @musician.location %></p>
             <%# <button class="btn btn-first mb-4">Message</button> %>
-            <%# <button class="btn btn-second-orange mb-4">Following</button> %>
+            <button class="btn btn-second-orange mb-4">Following</button>
           </div>
           <div class="flex-packages">
             <% @musician.packages.each do |package| %>

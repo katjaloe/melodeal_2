@@ -13,7 +13,7 @@
       color: $orange_primary;
       font-size: 38px;
       font-weight: bold;
-      text-indent: 145px;
+      text-indent: 190px;
     }
 
     .about {
@@ -24,7 +24,6 @@
       text-align: left;
       padding-right: 300px;
     }
-
 
   //   .btn {
   //     margin: 30px 15px;
@@ -60,18 +59,18 @@
     // opacity: 0.8;
     background-size: cover;
     background-position: center;
-    height: 180px;
+    height: 190px;
     border-radius: 5px 5px 0 0;
 }
 
 .profile {
     position: absolute;
-    width: 120px;
+    width: 170px;
     bottom: -60px;
     left: 15px;
     border-radius: 50%;
     border: 1px solid $brown-secondary;
-    padding: 5px;
+    padding: 0px;
     font: $body-font
 }
 
@@ -80,6 +79,7 @@
     margin: 25px 0 0 120px;
     color: $brown-secondary;
     font: $body-font
+
 }
 
 .about {
@@ -102,11 +102,31 @@
 }
 
 .package-card {
+  // display: grid;
   width: 150px;
   padding: 20px;
   margin: 10px;
   border: 1px solid $brown-secondary;
   border-radius: 5px;
-  background-color: #ffffff6e
+  background-color: $rose-secondary;
+  border-radius: 15px;
+
   // display: flex;
 }
+
+// .card-image-container {
+//   width: 285px;
+//   height: 250px;
+//   overflow: hidden;
+//   text-align: center;
+//   margin: 5px 5px 5px 5px;
+// }
+// .card-img {
+//   object-fit: cover;
+//   height: 100%;
+//   width: 100%;
+//   img {
+//     width: 100%;
+//     border-radius: 15px
+//   }
+// }
