@@ -27,7 +27,7 @@
                 <hr>
                 <p>Price: <%= package.price %></p>
                 <p>Hours: <%= package.hours %></p>
-                <%= link_to "Book!", root_path, class: "btn btn-first" %>
+                <%= link_to "Book!", new_package_booking_path(package), class: "btn btn-first" %>
               </div>
             <% end %>
           </div>

@@ -4,36 +4,40 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @musician = Musician.find(params[:musician_id])
+    @package = Package.find(params[:package_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @musician = Musician.find(params[:musician_id])
-    @booking.musician = @musician
+    @package = Package.find(params[:package_id])
+    @booking.package = @package
     @booking.status = 0
 
     if @booking.save
-      redirect_to profile_path
+      redirect_to musicians_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def accept
-
     @booking = Booking.find(params[:id])
     @booking.update(status: 1)
-    redirect_to profile_path
+    redirect_to musicians_path
   end
 
   def decline
-
     @booking = Booking.find(params[:id])
     @booking.update(status: 2)
-    redirect_to profile_path
+    redirect_to musicians_path
+  end
+
+  def completed
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 3)
+    redirect_to musicians_path
   end
 
   private
