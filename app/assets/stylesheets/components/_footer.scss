@@ -29,10 +29,16 @@
   margin: auto 5px auto;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   min-height: 100vh;
+//   padding-top: 50px;
+// }
+
+.page-container {
+  display: grid;
   min-height: 100vh;
-  padding-top: 50px;
-}
+  grid-template-rows: auto 1fr auto;
+ }
