@@ -1,5 +1,9 @@
 class PackagesController < ApplicationController
-  before_action :set_musician, only: [ :new, :create ]
+  before_action :set_musician, only: [ :show, :new, :create ]
+  before_action :set_package, only: [ :show ]
+
+  def show
+  end
 
   def new
     @package = Package.new
@@ -17,9 +21,13 @@ class PackagesController < ApplicationController
     end
   end
 
-  
+
 
   private
+
+  def set_package
+    @package = Package.find(params[:id])
+  end
 
   def set_musician
     @musician = Musician.find(params[:musician_id])

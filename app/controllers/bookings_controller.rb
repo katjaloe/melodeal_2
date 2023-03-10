@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -16,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.status = 0
 
     if @booking.save
-      redirect_to musicians_path
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
