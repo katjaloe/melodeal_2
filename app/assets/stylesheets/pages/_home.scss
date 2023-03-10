@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 body {
-background-color: $rose-secondary;
+background-color: $body-background;
 font-family: $body-font;
 font-weight: light;
 }
@@ -73,6 +73,8 @@ h1 {
   .form-select {
     background-color: transparent;
     border-color: $orange_primary;
+    color: #f5783f;
+    border-radius: 15px;
   }
 
   .btn-second-orange {
