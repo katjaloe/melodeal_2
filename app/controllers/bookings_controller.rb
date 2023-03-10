@@ -16,24 +16,27 @@ class BookingsController < ApplicationController
     @booking.status = 0
 
     if @booking.save
-      redirect_to profile_path
+      redirect_to
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def accept
-
     @booking = Booking.find(params[:id])
     @booking.update(status: 1)
-    redirect_to profile_path
+    redirect_to
   end
 
   def decline
-
     @booking = Booking.find(params[:id])
     @booking.update(status: 2)
-    redirect_to profile_path
+    redirect_to
+  end
+  def completed
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 3)
+    redirect_to
   end
 
   private
