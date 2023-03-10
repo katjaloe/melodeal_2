@@ -89,26 +89,6 @@
     font: $body-font
 }
 
-.icons {
-    width: 180px;
-    // margin: 0 auto 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    padding-right: 300px;
-}
-
-.icons i {
-    cursor: pointer;
-    padding: 5px;
-    font-size: 18px;
-    transition: 0.2s;
-}
-
-.icons i:hover {
-    color: $orange_primary;
-}
-
 .flex-container {
   display: flex;
   flex-direction: row;
