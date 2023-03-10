@@ -1,10 +1,10 @@
-<div class="container">
-  <h1>Request your musicians</h1>
-
+<div class= "headline-container">
+  <h1>Request your musician:</h1>
+</div>
+<div class="from-container">
   <%= simple_form_for [@package, @booking] do |f| %>
-    <p>Date: <%= f.date_field :date, class: "input-field" %>
-    Time: <%= f.time_field :time, class: "input-field" %>
-    <%= f.submit class: "btn-first"%> </p>
-  <% end %>
-
+  <p>Date: <%= f.date_field :date, class: "input-field" %>
+     Time: <%= f.time_field :time, class: "input-field" %>
+           <%= f.submit class: "btn-first"%> </p>
+    <% end %>
 </div>
