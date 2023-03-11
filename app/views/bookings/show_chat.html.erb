@@ -1,0 +1,28 @@
+<div class="container chatroom"
+  data-controller="booking-subscription"
+  data-booking-subscription-booking-id-value="<%= @booking.id %>"
+  data-booking-subscription-current-user-id-value="<%= current_user.id %>">
+
+  <h1>#<%= @booking.date %></h1>
+
+  <div class="messages" data-booking-subscription-target="messages">
+    <% @booking.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@booking, @message],
+    html: {data: {action: "turbo:submit-end->booking-subscription#resetForm"}, class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-first mb-3" %>
+  <% end %>
+</div>
