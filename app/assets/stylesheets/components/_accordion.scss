@@ -1,0 +1,31 @@
+.accordion {
+  width: 50%;
+
+
+  .open {
+    border-radius: 0 0 15px 15px;
+  }
+}
+
+.accordion-item {
+  border: 1px solid $orange_primary;
+}
+
+#accordionExample .accordion-item {
+  // font-size: 0.5em;
+  // border-top: 2em solid blue;
+  // border-bottom: 2em solid blue;
+  // border-left: 2em solid blue;
+  // border-right: 2em solid blue;
+  border-radius: 14px;
+}
+
+#accordionExample .accordion-button {
+  border-radius: 14px;
+  background-color: $rose-secondary;
+}
+
+// .accordion .accordion-item + .accordion-item {
+// margin-top: 2rem;
+// border-top: 2em solid blue;
+// }

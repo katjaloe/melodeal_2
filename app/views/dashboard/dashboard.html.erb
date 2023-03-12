@@ -18,12 +18,11 @@
   <h4>See your upcoming gigs</h4>
   <% @musicians.each do |musician| %>
     <% musician.packages.each do |package| %>
-    <% package.bookings.each do |booking| %>
-    <div class="booking-card">
-      <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
-    </div>
+      <% package.bookings.each do |booking| %>
+        <div class="booking-card">
+          <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-  <% end %>
-  <% end %>
-
 </div>
