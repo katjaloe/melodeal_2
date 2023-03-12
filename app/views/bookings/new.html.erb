@@ -1,7 +1,7 @@
 <div class= "headline-container">
   <h1>Request your musician:</h1>
 </div>
-<div class="from-container">
+<div class="form-container">
   <%= simple_form_for [@package, @booking] do |f| %>
   <p>Date: <%= f.date_field :date, class: "input-field" %>
      Time: <%= f.time_field :time, class: "input-field" %>
