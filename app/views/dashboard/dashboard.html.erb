@@ -6,22 +6,27 @@
 </div>
 
 <div class="bookings-container mt-4 ">
-  <h4>See your bookings here:</h4>
-    <% @bookings.each do |booking| %>
-      <div class="booking-card">
-        <%= render partial: "shared/accordion", locals: { booking: booking } %>
-      </div>
-    <% end %>
+  <h3>See your bookings here:</h3>
+    <div class ="bookings-accordion-container">
+      <% @bookings.each do |booking| %>
+        <div class="booking-card">
+          <%= render partial: "shared/accordion", locals: { booking: booking } %>
+        </div>
+      <% end %>
+    </div>
 </div>
 
-<h4>See your upcoming gigs</h4>
-
-<% @musicians.each do |musician| %>
-<% musician.packages.each do |package| %>
-<% package.bookings.each do |booking| %>
- <%= booking.status %>
-
-<%= link_to "Chat", show_chat_path(booking) %>
-<% end %>
-<% end %>
-<% end %>
+<div class="bookings-container mt-4 ">
+  <h3>See your upcoming gigs</h3>
+    <div class ="bookings-accordion-container">
+      <% @musicians.each do |musician| %>
+        <% musician.packages.each do |package| %>
+          <% package.bookings.each do |booking| %>
+            <div class="booking-card">
+              <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+</div>

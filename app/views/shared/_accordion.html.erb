@@ -1,15 +1,29 @@
  <div class="accordion open" id="accordionExample">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="true" aria-controls="collapse">
-        Your booking for <%= booking.date %> is <%= booking.status %>
-      </button>
-    </h2>
-    <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>You booked the <%= booking.package.description %> </strong>
-        <%= link_to "Chat", show_chat_path(booking) %>
+    <% if booking.status == "pending" %>
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+          Your booking for <%= booking.date %> is <%= booking.status %>
+        </button>
+      </h2>
+    <% elsif booking.status == "accepted" %>
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button-accepted" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+          Your booking for <%= booking.date %> is <%= booking.status %>
+        </button>
+      </h2>
+    <% else %>
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button-declined" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+          Your booking for <%= booking.date %> is <%= booking.status %>
+        </button>
+      </h2>
+    <% end %>
+      <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>You booked the <%= booking.package.description %> </strong>
+          <%= link_to "Chat", show_chat_path(booking) %>
+        </div>
       </div>
-    </div>
   </div>
 </div>

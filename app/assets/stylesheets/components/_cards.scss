@@ -22,15 +22,32 @@
   margin: 6px auto;
   border-radius: 15px;
 }
+
 .card-img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  position: relative;
   img {
     width: 100%;
     border-radius: 15px
   }
 }
+
+.musician-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+
+  p {
+    padding: 7px;
+    border-radius: 15px;
+    background-color: $rose-secondary;
+    color: $brown-secondary;
+    margin-bottom: 4px;
+  }
+}
+
 h1 {
   font-family: $headers-font;
 }

@@ -1,0 +1,73 @@
+.accordion-item {
+  border: 1px solid $orange_primary;
+}
+
+#accordionExample .accordion-item {
+  // font-size: 0.5em;
+  // border-top: 2em solid blue;
+  // border-bottom: 2em solid blue;
+  // border-left: 2em solid blue;
+  // border-right: 2em solid blue;
+  border-radius: 15px;
+}
+
+#accordionExample .accordion-button {
+  border-radius: 15px;
+  background-color: $rose-secondary;
+
+  // .accepted {
+  //   background-color: $green-contrast;
+  // }
+
+  // .declined {
+  //   background-color: lightgrey;
+  // }
+}
+
+
+#accordionExample .accordion-button-accepted {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+  font-size: 1rem;
+  color: var(--bs-accordion-btn-color);
+  text-align: left;
+  border: 0;
+  overflow-anchor: none;
+  transition: var(--bs-accordion-transition);
+  border-radius: 15px;
+  background-color: $green-contrast;
+
+
+}
+
+#accordionExample .accordion-button-declined {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+  font-size: 1rem;
+  color: var(--bs-accordion-btn-color);
+  text-align: left;
+  border: 0;
+  overflow-anchor: none;
+  transition: var(--bs-accordion-transition);
+  border-radius: 15px;
+  background-color: lightgrey;
+}
+
+.accordion-button-accepted:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-active-icon);
+  transform: var(--bs-accordion-btn-icon-transform);
+}
+
+.accordion-button-accepted:not(.collapsed) {
+  color: $brown-secondary;
+}
+// .accordion .accordion-item + .accordion-item {
+// margin-top: 2rem;
+// border-top: 2em solid blue;
+// }
