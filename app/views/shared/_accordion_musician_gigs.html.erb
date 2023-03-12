@@ -1,0 +1,27 @@
+<div class="accordion open" id="accordionExample">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+            Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is <%= booking.status %>
+          </button>
+        </h2>
+        <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>You booked the <%= booking.package.description %> </strong>
+              <% if booking.status == "pending"  %>
+                <%= link_to booking_accept_path(booking) do %>
+                  <div class="btn btn-first">Accept</div>
+                  <%# <i class="fa-regular fa-square-check"></i> %>
+                <% end %>
+                <%= link_to booking_decline_path(booking) do %>
+                  <div class="btn btn-second-orange">Decline</div>
+                  <%# <i class="fa-solid fa-square-check"></i> %>
+                <% end %>
+              <% end %>
+            <%= link_to "Chat with the host", show_chat_path(booking) %>
+          </div>
+        </div>
+      </div>
+
+</div>
