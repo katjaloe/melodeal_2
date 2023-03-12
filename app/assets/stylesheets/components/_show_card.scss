@@ -3,7 +3,7 @@
     width: 900px;
     background: $rose-secondary;
     border-radius: 5px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    // box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
     user-select: none;
     color: $brown-secondary;
     font-family: $headers-font;
@@ -50,23 +50,19 @@
   // }
 }
 
-
-
-.cover-photo {
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1586351011807-b79c8ef43057?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    // background: url(https://i.imgur.com/jxyuizJ.jpeg);
-    // opacity: 0.8;
-    background-size: cover;
-    background-position: center;
-    height: 190px;
-    border-radius: 5px 5px 0 0;
-}
+// .cover-photo {
+//     position: relative;
+//     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))
+//     background-size: cover;
+//     background-position: center;
+//     height: 190px;
+//     border-radius: 5px 5px 0 0;
+// }
 
 .profile {
-    position: absolute;
+    position: relative;
     width: 170px;
-    bottom: -60px;
+    bottom: -20px;
     left: 15px;
     border-radius: 50%;
     border: 1px solid $brown-secondary;
