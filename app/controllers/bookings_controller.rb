@@ -41,6 +41,11 @@ class BookingsController < ApplicationController
     redirect_to musicians_path
   end
 
+  def show_chat
+    @booking = Booking.find(params[:id])
+    @message = Message.new
+  end
+
   private
 
   def booking_params

@@ -7,8 +7,14 @@ Rails.application.routes.draw do
   resources :musicians
 
   resources :packages do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create ]
   end
+
+  resources :bookings do
+    resources :messages, only: [:new, :create]
+  end
+
+  get "/bookings/:id/show_chat", to: "bookings#show_chat", as: "show_chat"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
