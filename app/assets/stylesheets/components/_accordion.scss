@@ -1,12 +1,3 @@
-.accordion {
-  width: 50%;
-
-
-  .open {
-    border-radius: 0 0 15px 15px;
-  }
-}
-
 .accordion-item {
   border: 1px solid $orange_primary;
 }
@@ -17,11 +8,11 @@
   // border-bottom: 2em solid blue;
   // border-left: 2em solid blue;
   // border-right: 2em solid blue;
-  border-radius: 14px;
+  border-radius: 15px;
 }
 
 #accordionExample .accordion-button {
-  border-radius: 14px;
+  border-radius: 15px;
   background-color: $rose-secondary;
 }
 
