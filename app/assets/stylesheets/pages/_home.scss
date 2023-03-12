@@ -17,6 +17,19 @@ h1 {
 
 }
 
+.banner-index-page {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 400px;
+    h2 {
+      color: $rose-secondary;
+      font-family: $body-font;
+    }
+    // the h1 is not yet the right font-family!
+}
+
+
 .banner h1 {
   font-family: $headers-font;
   color: $orange_primary;
