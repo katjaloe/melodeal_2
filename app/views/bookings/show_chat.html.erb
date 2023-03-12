@@ -3,7 +3,7 @@
   data-booking-subscription-booking-id-value="<%= @booking.id %>"
   data-booking-subscription-current-user-id-value="<%= current_user.id %>">
 
-  <h1>#<%= @booking.date %></h1>
+  <h1>Your MeloDeal at <%= @booking.date.strftime("%A, %d %b %Y") %></h1>
 
   <div class="messages" data-booking-subscription-target="messages">
     <% @booking.messages.each do |message| %>
