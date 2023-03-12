@@ -8,6 +8,9 @@
 
 <div class="cards-container container">
   <% @musicians.each do |musician|  %>
-      <%= render partial: "shared/card", locals: { musician: musician } %>
-    <% end %>
+    <%= render partial: "shared/card", locals: { musician: musician } %>
+  <% end %>
+  <% if @musicians.count < 1 then %>
+    <p>No musicians found. Please adjust your filters.</p>
+  <% end %>
 </div>
