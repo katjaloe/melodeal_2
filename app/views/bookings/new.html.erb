@@ -1,10 +1,15 @@
-<div class= "headline-container">
-  <h1>Request your musician:</h1>
-</div>
-<div class="from-container">
-  <%= simple_form_for [@package, @booking] do |f| %>
-  <p>Date: <%= f.date_field :date, class: "input-field" %>
-     Time: <%= f.time_field :time, class: "input-field" %>
-           <%= f.submit class: "btn-first"%> </p>
+<div class="body-background-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60)">
+  <div class= "headline-container">
+    <h1>Request your musician:</h1>
+  </div>
+  <div class="booking-form-container">
+    <%= simple_form_for [@package, @booking] do |f| %>
+      <p>Date: <%= f.date_field :date, class: "input-field" %></p>
+      <p> Time: <%= f.time_field :time, class: "input-field" %></p>
+      <%# Location: <%= f.location :location, class: "input-field" %>
+      <%# Comment: <%= f.input :input, class: "input-field" %>
+      <p> <%= f.submit class: "btn-first"%></p>
     <% end %>
+  </div>
 </div>
+<%# where does the content container comes from? %>
