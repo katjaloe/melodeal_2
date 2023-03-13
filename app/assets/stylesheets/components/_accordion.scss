@@ -13,7 +13,7 @@
 
 #accordionExample .accordion-button {
   border-radius: 15px;
-  background-color: $rose-secondary;
+  background-color: white;
 
   // .accepted {
   //   background-color: $green-contrast;
@@ -24,49 +24,32 @@
   // }
 }
 
+.pending {
+  padding: 7px;
+  border-radius: 15px;
+  background-color: $rose-secondary;
+  color: $brown-secondary;
+  margin-bottom: 4px;
+}
 
-#accordionExample .accordion-button-accepted {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
-  font-size: 1rem;
-  color: var(--bs-accordion-btn-color);
-  text-align: left;
-  border: 0;
-  overflow-anchor: none;
-  transition: var(--bs-accordion-transition);
+.accepted {
+  padding: 7px;
   border-radius: 15px;
   background-color: $green-contrast;
-
-
-}
-
-#accordionExample .accordion-button-declined {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
-  font-size: 1rem;
-  color: var(--bs-accordion-btn-color);
-  text-align: left;
-  border: 0;
-  overflow-anchor: none;
-  transition: var(--bs-accordion-transition);
-  border-radius: 15px;
-  background-color: lightgrey;
-}
-
-.accordion-button-accepted:not(.collapsed)::after {
-  background-image: var(--bs-accordion-btn-active-icon);
-  transform: var(--bs-accordion-btn-icon-transform);
-}
-
-.accordion-button-accepted:not(.collapsed) {
   color: $brown-secondary;
+  margin-bottom: 4px;
 }
+
+.declined {
+  padding: 7px;
+  border-radius: 15px;
+  background-color: lightgray;
+  color: $brown-secondary;
+  margin-bottom: 4px;
+}
+
+
+
 // .accordion .accordion-item + .accordion-item {
 // margin-top: 2rem;
 // border-top: 2em solid blue;
