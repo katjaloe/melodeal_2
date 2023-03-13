@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :packages
   has_many :bookings
   has_many :musicians
+  has_many :reviews
 end

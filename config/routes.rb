@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 
   get "/dashboard", to: "dashboard#dashboard"
-  resources :musicians
+  resources :musicians do
+    resources :reviews, only: [:index, :create]
+  end
 
   resources :packages do
     resources :bookings, only: [:new, :create ]
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :bookings do
     resources :messages, only: [:new, :create]
   end
+
 
   get "/bookings/:id/show_chat", to: "bookings#show_chat", as: "show_chat"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
