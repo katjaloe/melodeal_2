@@ -2,7 +2,6 @@ class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
-    # raise
     @filter = params["filter"]
     if @filter.present?
       @location = @filter["location"]
@@ -15,6 +14,8 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = Musician.find(params[:id])
+    @review = Review.new
+    @reviews = Review.all
   end
 
   def new

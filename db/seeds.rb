@@ -15,6 +15,8 @@ type_of_event = ["wedding ceremony", "wedding party", "funeral", "vernisace"]
 type_of_musician = ["Band", "Piano player", "Violinist", "Vocal"]
 location = ["Berlin", "Hamburg", "Köln", "Stuttgart", "Hannover"]
 
+Message.destroy_all
+Booking.destroy_all
 Package.destroy_all
 Musician.destroy_all
 User.destroy_all
