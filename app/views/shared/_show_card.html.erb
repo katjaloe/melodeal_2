@@ -23,14 +23,14 @@
                 <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
                   Book!
                 </button>
-                <%# <%= link_to "Book!", new_package_booking_path(package), class: "btn btn-first" %>
               </div>
-
-              <% @musician.reviews.each do |review| %>
-            <%= review.content %>
-            <%= review.rating %>
-           <% end %>
             <% end %>
+            <div class="reviews_show">
+              <% @musician.reviews.each do |review| %>
+                <%= review.content %>
+                <%= review.rating %>
+              <% end %>
+           </div>
           </div>
         </div>
       </div>
