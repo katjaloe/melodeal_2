@@ -7,6 +7,9 @@ class MusiciansController < ApplicationController
       @location = @filter["location"]
       @type_of_event = @filter["type_of_event"]
       @musicians = Musician.where(location: @location)
+    elsif params[:query].present?
+      sql_query = "first_name ILIKE :query OR location ILIKE :query OR type_of_musician ILIKE :query"
+      @musicians = Musician.where(sql_query, query: "%#{params[:query]}%")
     else
       @musicians = Musician.all
     end
@@ -14,6 +17,7 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = Musician.find(params[:id])
+    @booking = Booking.new
     @review = Review.new
     @reviews = Review.all
   end
@@ -42,4 +46,5 @@ class MusiciansController < ApplicationController
   def musician_params
     params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link)
   end
+
 end

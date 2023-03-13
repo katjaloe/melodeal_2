@@ -47,3 +47,24 @@ input#user_email.form-control.string.email.optional {
 input#password.form-control.password.optional {
   background: white;
 }
+
+.search-bar {
+// background-color:#ffffff57;
+  position: relative;
+  .form-control {
+    background-color: $search_form_background;
+    border-radius:15px ;
+    border: solid 1px;
+    border-color: $orange_primary;
+  }
+  .form-control::placeholder {
+    color: $orange_primary;
+    opacity: 1;
+  }
+  .btn-first {
+    position: absolute;
+    right: 0px;
+    height: 37px;
+  }
+
+}

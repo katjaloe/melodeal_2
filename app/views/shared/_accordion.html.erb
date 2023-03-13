@@ -3,19 +3,28 @@
     <% if booking.status == "pending" %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your booking for <%= booking.date %> is <%= booking.status %>
+          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
+          <div class="pending">
+            <%= booking.status %>
+          </div>
         </button>
       </h2>
     <% elsif booking.status == "accepted" %>
       <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button-accepted" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your booking for <%= booking.date %> is <%= booking.status %>
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
+            <div class="accepted">
+              <%= booking.status %>
+            </div>
         </button>
       </h2>
     <% else %>
       <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button-declined" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your booking for <%= booking.date %> is <%= booking.status %>
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
+          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
+          <div class="declined">
+            <%= booking.status %>
+          </div>
         </button>
       </h2>
     <% end %>

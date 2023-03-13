@@ -14,7 +14,7 @@ h1 {
 .banner {
   display: flex;
   align-items: center;
-
+  height:100vh;
 }
 
 .banner-index-page {
@@ -35,31 +35,30 @@ h1 {
   color: $orange_primary;
   font-size: 38px;
   font-weight: bold;
+  text-align: left;
+  padding-left: 12px;
 }
 
 .banner h2 {
   font-family: $headers-font;
   font-size: 30px;
   color: $rose-secondary;
+  padding-left: 12px;
+
 }
 
-.intro_text_container {
-  // background-color: $rose-secondary;
-  margin-top: 70px;
-  margin-bottom: 200px;
-}
 
 .intro_text h3 {
   font-family: $body-font;
   font-size: 25px;
-  color: $dark-brown;
+  color: $rose-secondary;
   padding-left: 12px;
 }
 
-.intro_text h4 {
+.intro_text p {
   font-family: $body-font;
   font-size: 20px;
-  color: $dark-brown;
+  color: $rose-secondary;
   padding-left: 12px;
   display: flex;
   flex-direction: row;
@@ -69,6 +68,8 @@ h1 {
   height: 144px;
   left: 24px;
   top: 732px;
+  text-align: left;
+  font-weight: lighter;
 }
 
 .search_form_container {
@@ -77,6 +78,8 @@ h1 {
   // opacity: 0.7;
   position: relative;
   left: 176px;
+  color: $rose-secondary;
+  width: 500px;
 
   .form-check-input:focus {
     border-color: $orange_primary;
@@ -84,7 +87,7 @@ h1 {
     box-shadow: 0 0 0 0.25rem rgba(245, 120, 63, 0.25);
   }
   .form-select {
-    background-color: transparent;
+    background-color: $search_form_background;
     border-color: $orange_primary;
     color: #f5783f;
     border-radius: 15px;
