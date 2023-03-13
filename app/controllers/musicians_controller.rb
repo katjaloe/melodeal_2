@@ -31,7 +31,7 @@ class MusiciansController < ApplicationController
     @musician.user = current_user
 
     if @musician.save
-      redirect_to root_path(@musician)
+      redirect_to musician_path(@musician)
     else
       render :new, status: :unprocessable_entity
     end
