@@ -22,12 +22,16 @@
                 <p>Hours: <%= package.hours %></p>
                 <%= link_to "Book!", new_package_booking_path(package), class: "btn btn-first" %>
               </div>
-
+              </div>
+                <% end %>
+              <div class="reviews_show">
+              <div>
               <% @musician.reviews.each do |review| %>
             <%= review.content %>
             <%= review.rating %>
            <% end %>
-            <% end %>
+           </div>
+          </div>
           </div>
         </div>
       </div>
