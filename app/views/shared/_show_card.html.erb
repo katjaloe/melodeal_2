@@ -11,7 +11,6 @@
         <div class="flex-container">
           <div>
             <p class="about"><%= @musician.type_of_musician %> <br> &#128205; <%= @musician.location %></p>
-            <%# <button class="btn btn-first mb-4">Message</button> %>
             <button class="btn btn-second-orange mb-4">Following</button>
           </div>
           <div class="flex-packages">
@@ -23,6 +22,11 @@
                 <p>Hours: <%= package.hours %></p>
                 <%= link_to "Book!", new_package_booking_path(package), class: "btn btn-first" %>
               </div>
+
+              <% @musician.reviews.each do |review| %>
+            <%= review.content %>
+            <%= review.rating %>
+           <% end %>
             <% end %>
           </div>
         </div>
