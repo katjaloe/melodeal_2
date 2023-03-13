@@ -1,0 +1,7 @@
+<%= simple_form_for [@package, @booking] do |f| %>
+  <p>Date: <%= f.date_field :date, class: "input-field" %></p>
+  <p> Time: <%= f.time_field :time, class: "input-field" %></p>
+  <%# Location: <%= f.location :location, class: "input-field" %>
+  <%# Comment: <%= f.input :input, class: "input-field" %>
+  <p> <%= f.submit class: "btn-first"%></p>
+<% end %>

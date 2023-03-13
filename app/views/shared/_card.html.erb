@@ -10,7 +10,9 @@
 
   <div class="card-contend">
     <h3><%=musician.first_name%></h3>
-    <h4><%=musician.type_of_musician%></h4>
+      <div class="instrument-tag">
+        <%=musician.type_of_musician%>
+      </div>
     <p><%=musician.first_name %> <%=musician.last_name %>is one of our favs!. Also known as <%=musician.nickname %></p>
   </div>
 <% end %>

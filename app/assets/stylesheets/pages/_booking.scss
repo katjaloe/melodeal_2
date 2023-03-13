@@ -1,4 +1,11 @@
+.body-background-image {
+  background-image: url(/app/assets/images/booking_background.jpg);
+  background-repeat: no-repeat;
+  height: 500px;
+  background-size: cover;
+  position: relative;
 
+}
 .headline-container {
   margin-top: 50px;
   position: relative;
@@ -13,4 +20,19 @@ h1 {
 p {
   text-align: center;
   color: $brown-secondary;
+}
+
+
+.booking-form-container {
+  margin: auto;
+  width: 700px;
+  text-align: left;
+  background: #FEF1EC;
+  border-radius: 15px;
+    p {
+      margin-left: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: left;
+    }
 }
