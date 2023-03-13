@@ -12,10 +12,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @package = Package.find(params[:package_id])
+    @package = Package.find(params[:booking][:package_id])
     @booking.package = @package
     @booking.status = 0
-
     if @booking.save
       redirect_to dashboard_path
     else

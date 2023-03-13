@@ -2,7 +2,6 @@ class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
-    # raise
     @filter = params["filter"]
     if @filter.present?
       @location = @filter["location"]
@@ -13,12 +12,14 @@ class MusiciansController < ApplicationController
       @musicians = Musician.where(sql_query, query: "%#{params[:query]}%")
     else
       @musicians = Musician.all
-
     end
   end
 
   def show
     @musician = Musician.find(params[:id])
+    @booking = Booking.new
+    @review = Review.new
+    @reviews = Review.all
   end
 
   def new
@@ -45,4 +46,5 @@ class MusiciansController < ApplicationController
   def musician_params
     params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link)
   end
+
 end
