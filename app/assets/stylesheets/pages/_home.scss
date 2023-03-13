@@ -79,6 +79,7 @@ h1 {
   position: relative;
   left: 176px;
   color: $rose-secondary;
+  width: 500px;
 
   .form-check-input:focus {
     border-color: $orange_primary;
@@ -86,7 +87,7 @@ h1 {
     box-shadow: 0 0 0 0.25rem rgba(245, 120, 63, 0.25);
   }
   .form-select {
-    background-color: transparent;
+    background-color: $search_form_background;
     border-color: $orange_primary;
     color: #f5783f;
     border-radius: 15px;

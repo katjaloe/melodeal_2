@@ -1,9 +1,18 @@
 
 <div class="banner-index-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1621368286550-f54551f39b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
-    <div class="banner-info">
-      <h1>Here we go</h1>
-      <h2>Below you see all musicians that matches your search.</h2>
-    </div>
+  <div class="banner-info">
+    <h1>Here we go</h1>
+    <h2>Below you see all musicians that matches your search.</h2>
+  <div class="search-bar">
+    <%= form_with url: musicians_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a musician"%>
+      <%= submit_tag "Search", class: "btn btn-first" %>
+    <% end %>
+  </div>
+  </div>
 </div>
 
 <div class="cards-container container">
