@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for @booking do |f| %>
-            <p>Date: <%= f.date_field :date, class: "input-field" %></p>
+            <%= f.hidden_field :package_id, :value => 161 %>            <p>Date: <%= f.date_field :date, class: "input-field" %></p>
             <p> Time: <%= f.time_field :time, class: "input-field" %></p>
             <%# Location: <%= f.location :location, class: "input-field" %>
             <%# Comment: <%= f.input :input, class: "input-field" %>

@@ -14,7 +14,7 @@
             <%# <button class="btn btn-first mb-4">Message</button> %>
             <button class="btn btn-second-orange mb-4">Following</button>
           </div>
-          <div class="flex-packages">
+          <div class="flex-packages" data-controller="booking">
             <% musician.packages.each do |package| %>
               <div class="package-card">
                 <small><%= package.description %></small>
