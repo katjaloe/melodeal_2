@@ -1,6 +1,6 @@
 .show-card {
     padding: 15px;
-    width: 900px;
+    width: 1200px;
     background: $rose-secondary;
     border-radius: 5px;
     // box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
@@ -20,6 +20,15 @@
       font-family: $body-font;
       color: $brown-secondary;
       font-size: 20px;
+      font-weight: lighter;
+      text-align: left;
+      padding-right: 300px;
+    }
+
+    .reviews_show {
+      font-family: $body-font;
+      color: $brown-secondary;
+      font-size: 15px;
       font-weight: lighter;
       text-align: left;
       padding-right: 300px;
