@@ -1,24 +1,27 @@
-<%= render "shared/show_card", musician: @musician  %>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for @booking do |f| %>
-            <%= f.hidden_field :package_id, :value => 161 %>            <p>Date: <%= f.date_field :date, class: "input-field" %></p>
-            <p> Time: <%= f.time_field :time, class: "input-field" %></p>
-            <%# Location: <%= f.location :location, class: "input-field" %>
-            <%# Comment: <%= f.input :input, class: "input-field" %>
-            <p> <%= f.submit class: "btn-first"%></p>
-          <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+<div  data-controller="booking">
+  <%= render "shared/show_card", musician: @musician  %>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for @booking do |f| %>
+              <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
+              <p>Date: <%= f.date_field :date, class: "input-field" %></p>
+              <p> Time: <%= f.time_field :time, class: "input-field" %></p>
+              <%# Location: <%= f.location :location, class: "input-field" %>
+              <%# Comment: <%= f.input :input, class: "input-field" %>
+              <p> <%= f.submit class: "btn-first"%></p>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
-    </div>
+  </div>
 </div>
