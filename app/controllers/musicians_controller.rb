@@ -9,12 +9,13 @@ class MusiciansController < ApplicationController
       @type_of_event = @filter["type_of_event"]
       @musicians = Musician.where(location: @location)
     else
-      @musicians = Musician.all
+      @musicians = Musician.all#
     end
   end
 
   def show
     @musician = Musician.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -41,4 +42,5 @@ class MusiciansController < ApplicationController
   def musician_params
     params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link)
   end
+
 end

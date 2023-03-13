@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    raise
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @package = Package.find(params[:package_id])
