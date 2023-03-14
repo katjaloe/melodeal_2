@@ -3,23 +3,25 @@
   <div class="banner-info">
     <h1>Here we go</h1>
     <h2>Below you see all musicians that matches your search.</h2>
-  <div class="search-bar">
-    <%= form_with url: musicians_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a musician"%>
-      <%= submit_tag "Search", class: "btn btn-first" %>
-    <% end %>
+      <div class="search-bar">
+        <%= form_with url: musicians_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a musician"%>
+          <%= submit_tag "Search", class: "btn btn-first" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
+<div class="">
+  <% if @musicians.count < 1 then %>
+    <h3>No musicians found. Please adjust your filter or see</h3>
+    <%= link_to "all musicians", musicians_path, class: "btn btn-first" %>
+  <% end %>
 </div>
-
 <div class="cards-container container">
   <% @musicians.each do |musician|  %>
     <%= render partial: "shared/card", locals: { musician: musician } %>
-  <% end %>
-  <% if @musicians.count < 1 then %>
-    <p>No musicians found. Please adjust your filters.</p>
   <% end %>
 </div>
