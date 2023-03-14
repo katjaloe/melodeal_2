@@ -5,9 +5,11 @@
     </div>
 </div>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: name %>
-  <% end %>
+<% if flash[:info] %>
+  <div class="info">
+  <%= flash[:info] %>
+  </div>
+<% end %>
 
 <div class="bookings-container mt-4 ">
   <h3>See your bookings here:</h3>
