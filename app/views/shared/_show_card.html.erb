@@ -2,6 +2,14 @@
   <div class="row justify-content-center d-grid mt-4">
     <div class="col-12">
       <div class="show-card">
+
+  <div class="package-button">
+    <% if @user.id == @musician.user_id %>
+    <%# <button class="btn btn-second-orange mb-4">Create Package</button> %>
+    <%= link_to "Create Package", new_musician_package_path(@musician) %>
+    <% end %>
+    </div>
+
         <div class="cover-photo">
           <%= image_tag(musician.photo, class: "profile") %>
         </div>
