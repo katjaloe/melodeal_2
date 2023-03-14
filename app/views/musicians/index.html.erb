@@ -3,8 +3,16 @@
   <div class="banner-info">
     <h1>Here we go</h1>
     <h2>Below you see all musicians that matches your search.</h2>
+
   <div class="search-bar">
     <%= form_with url: musicians_path, method: :get, class: "d-flex" do %>
+
+      <% if params["filter"] && params["filter"]["location"]%>
+        <input type="hidden" name="location" value="<%= params["filter"]["location"] %>">
+      <% elsif params["location"] %>
+        <input type="hidden" name="location" value="<%= params["location"] %>">
+      <% end %>
+
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
