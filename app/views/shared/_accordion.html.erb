@@ -30,8 +30,14 @@
     <% end %>
       <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>You booked the <%= booking.package.description %> </strong>
-          <%= link_to "Chat", show_chat_path(booking) %>
+          <p>You booked a MeloDeal with </p>
+          <%= image_tag booking.package.musician.photo, class: "avatar" %>
+          <strong><%= booking.package.musician.first_name %> </strong>
+          <%= booking.package.description %>
+          <%= link_to "Chat with #{booking.package.musician.first_name}", show_chat_path(booking), class:"btn btn-first" %>
+          <% if booking.date < Date.today && booking.status == "accepted" %>
+            <%= link_to "Review #{booking.package.musician.first_name}", musician_path(booking.package.musician_id), class: "btn btn-first" %>
+          <% end %>
         </div>
       </div>
   </div>

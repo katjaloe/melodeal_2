@@ -30,7 +30,10 @@
     <% end %>
       <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>You booked the <%= booking.package.description %> </strong>
+          <%= image_tag booking.user.photo, class: "avatar" %>
+          <strong> <%= booking.user.first_name %></strong>
+          <p>booked the <%= booking.package.hours.to_i %> hour package with you!</p>
+          <%# <%= booking.package.description %>
             <% if booking.status == "pending"  %>
               <%= link_to booking_accept_path(booking) do %>
                 <div class="btn btn-first">Accept</div>
