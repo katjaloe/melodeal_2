@@ -16,6 +16,7 @@ class MusiciansController < ApplicationController
   end
 
   def show
+    @user = current_user
     @musician = Musician.find(params[:id])
     @booking = Booking.new
     @review = Review.new

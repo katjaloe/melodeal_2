@@ -24,6 +24,8 @@
   background-color: white;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(245, 120, 63, 0.25);
+
+
 }
 
 
@@ -54,6 +56,7 @@ input#password.form-control.password.optional {
     border-radius:15px ;
     border: solid 1px;
     border-color: $orange_primary;
+    color: $rose-secondary;
   }
   .form-control::placeholder {
     color: $orange_primary;
@@ -65,4 +68,8 @@ input#password.form-control.password.optional {
     height: 37px;
   }
 
+}
+
+.form-select .dropdown {
+  background-color: aqua;
 }

@@ -29,6 +29,8 @@
               <% @musician.reviews.each do |review| %>
                 <%= review.content %>
                 <%= review.rating %>
+                <%# <%= review.rating.average(:rating) %>
+
               <% end %>
            </div>
           </div>
