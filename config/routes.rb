@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create]
   end
 
-  resources :packages do
-    resources :bookings, only: [:new, :create ]
+ 
+  resources :musicians do
+    resources :packages, only: [:new, :create ]
   end
 
   resources :bookings do

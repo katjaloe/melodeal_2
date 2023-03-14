@@ -1,25 +1,13 @@
-<h1>Packages#new</h1>
-<p>Find me in app/views/packages/new.html.erb</p>
-
 <div class="container_packages">
   <div class="row justify-content-center">
     <div class="col-12 form-devise">
-    <h1>Create your profile Page! 🎨 </h1>
-    <h4>This inforformation will be shown to potential customers, let them know why you are the perfect act for their event 🎻 🥳 </h4>
-      <%= simple_form_for [@packages] do |f| %>
-        <%= f.input :first_name, label: "First name"%>
-        <%= f.input :last_name, label: "Last name" %>
-        <%= f.input :nickname, label: "Artist name" %>
-        <%= f.input :location, label: "Location"%>
-        <%= f.input :description, label: "Tell us about yourself..."%>
-        <%# <%= f.input :type_of_event, label: "What kind of events do you like to play at?"%>
-        <%= f.input :type_of_musician, label: "What instrument is your profession"%>
-        <%= f.input :youtube_link, label: "youtube link"%>
-        <%= f.input :instagram_link, label: "instagram link"%>
-        <%= f.input :spotify_link, label: "spotify link"%>
-        <%= f.input :soundcloud_link, label: "soundcloud link"%>
-        <%= f.input :photo, as: :file, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-        <%= f.submit "Add your profile", class: "btn btn-first" %>
+    <h1>Create your individual Package! &#x1F4B8; </h1>
+    <h4>This information will be shown to potential customers.</h4>
+      <%= simple_form_for [@musician, @package ] do |f| %>
+        <%= f.input :price, label: "Price €"%>
+        <%= f.input :hours, label: "Hours" %>
+        <%= f.input :description, label: "Tell us more about the Package..." %>
+        <%= f.submit "Add to your profile", class: "btn btn-first" %>
       <% end %>
     </div>
   </div>
