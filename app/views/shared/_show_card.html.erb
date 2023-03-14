@@ -5,8 +5,7 @@
 
   <div class="package-button">
     <% if @user.id == @musician.user_id %>
-    <%# <button class="btn btn-second-orange mb-4">Create Package</button> %>
-    <%= link_to "Create Package", new_musician_package_path(@musician) %>
+    <button type="button" class="btn btn-second-orange mb-4"><%= link_to "Create Package", new_musician_package_path(@musician) %>
     <% end %>
     </div>
 
