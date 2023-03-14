@@ -1,11 +1,13 @@
 .chatroom {
-  background: white;
+  background: $rose-secondary;
   margin-top: 9px;
+  margin-bottom: 30px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  border-radius: 15px;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -44,7 +46,7 @@
 }
 
 .sender-style {
-  background-color:  $rose-secondary;
+  background-color:  white;
 }
 
 .receiver-style {

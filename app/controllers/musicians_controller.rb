@@ -31,7 +31,7 @@ class MusiciansController < ApplicationController
     @musician.user = current_user
 
     if @musician.save
-      redirect_to root_path(@musician)
+      redirect_to musician_path(@musician)
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class MusiciansController < ApplicationController
   end
 
   def musician_params
-    params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link)
+    params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link, :soundcloud_link, :instagram_link, :photo)
   end
 
 end

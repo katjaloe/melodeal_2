@@ -11,8 +11,8 @@ require "open-uri"
 
 puts "Deleting current Database entries...!"
 
-type_of_event = ["wedding ceremony", "wedding party", "birthday party", "art event",  ]
-type_of_musician = ["", "Piano player", "Violinist", "Vocal"]
+type_of_event = ["wedding ceremony", "wedding party", "birthday party", "art event"]
+type_of_musician = ["Guitar", "Piano", "Violin", "Vocal", "Drums"]
 location = ["Berlin", "Hamburg", "Cologne", "Stuttgart", "Hannover"]
 
 Message.destroy_all
@@ -24,12 +24,12 @@ User.destroy_all
 puts "Creating users"
 colleen = User.create!(first_name: "Colleen", last_name: "Brown", email: "colleen@colleen.com", password: "123456")
 katja = User.create!(first_name: "Katja", last_name: "Löffler", email: "katja@katja.com", password: "123456")
-file_katja = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673201177/uaqwpyl6xjs1hm2jfaq6.jpg")
+# file_katja = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673201177/uaqwpyl6xjs1hm2jfaq6.jpg")
 louise = User.create!(first_name: "Louise", last_name: "Wedel", email: "louise@louise.com", password: "123456")
-file_louise = URI.open("https://avatars.githubusercontent.com/u/116000558?v=4")
+# file_louise = URI.open("https://avatars.githubusercontent.com/u/116000558?v=4")
 besher = User.create!(first_name: "Besher", last_name: "Albalkhi", email: "besher@besher.com", password: "123456")
-file_besher = URI.open("https://avatars.githubusercontent.com/u/122227511?v=4")
-besher.photo.attach(io: file_besher, filename: "besher.png", content_type: "image/png")
+# file_besher = URI.open("https://avatars.githubusercontent.com/u/122227511?v=4")
+# besher.photo.attach(io: file_besher, filename: "besher.png", content_type: "image/png")
 puts "created users"
 
 puts "Creating Musicians"
@@ -124,7 +124,6 @@ Musician.all.each do |musician|
     musician_id: musician.id
   )
 end
-
 
 
 puts "created #{Package.count} packages"
