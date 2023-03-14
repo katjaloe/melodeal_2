@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_musician, only: [ :show, :new, :create ]
-  before_action :set_package, only: [ :show ]
+  before_action :set_package, only: [ :show  ]
 
   def show
   end
@@ -15,13 +15,11 @@ class PackagesController < ApplicationController
     @package.musician = @package
 
     if @package.save
-      redirect_to root_path
+      redirect_to musician_path(@musician)
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-
 
   private
 
