@@ -6,7 +6,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Book your MeloDeal with <%= @musician.first_name %> </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -14,12 +14,18 @@
               <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
               <p>Date: <%= f.date_field :date, class: "input-field" %></p>
               <p> Time: <%= f.time_field :time, class: "input-field" %></p>
+<<<<<<< HEAD
               <p> <%= f.submit class: "btn-first"%></p>
             <% end %>
+=======
+
+>>>>>>> f503799e435719b8f46ba4dd955746ba93c7de35
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              <p> <%= f.submit class: "btn-first"%></p>
+            <% end %>
+            <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button> %>
           </div>
         </div>
       </div>
