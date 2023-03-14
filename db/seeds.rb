@@ -13,7 +13,7 @@ puts "Deleting current Database entries...!"
 
 type_of_event = ["wedding ceremony", "wedding party", "birthday party", "art event"]
 type_of_musician = ["Guitar", "Piano", "Violin", "Vocal", "Drums"]
-location = ["Berlin", "Hamburg", "Cologne", "Stuttgart", "Hannover"]
+location = ["Berlin", "Hamburg", "Cologne", "Stuttgart", "Hanover"]
 
 Message.destroy_all
 Booking.destroy_all
