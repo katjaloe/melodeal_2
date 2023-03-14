@@ -11,17 +11,14 @@ class PackagesController < ApplicationController
 
   def create
     @package = Package.new(package_params)
-    @package.user = current_user
-    @package.musician = @package
+    @package.musician = @musician
 
     if @package.save
-      redirect_to root_path
+      redirect_to musician_path(@musician)
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-
 
   private
 

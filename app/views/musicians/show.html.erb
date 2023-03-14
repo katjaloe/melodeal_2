@@ -1,7 +1,5 @@
-
 <div data-controller="booking">
   <%= render "shared/show_card", musician: @musician  %>
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -14,18 +12,13 @@
               <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
               <p>Date: <%= f.date_field :date, class: "input-field" %></p>
               <p> Time: <%= f.time_field :time, class: "input-field" %></p>
-
-          <%# </div> %>
           <div class="modal-footer">
               <p> <%= f.submit class: "btn-first"%></p>
-            <%# <% end %>
-            <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button> %>
+              </div>
+           <% end %>
           </div>
-          <% end %>
         </div>
       </div>
-    </div>
     </div>
 </div>
 
@@ -38,6 +31,8 @@
         <%= f.submit "Send your review" %>
         <% end %>
     </div>
-
   </div>
+  <% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
+    <%= render "shared/review_form", musician: @musician, review: @review %>
+  <% end %>
 </div>
