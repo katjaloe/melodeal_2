@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_musician, only: [ :show, :new, :create ]
-  before_action :set_package, only: [ :show  ]
+  before_action :set_package, only: [ :show ]
 
   def show
   end
@@ -11,8 +11,7 @@ class PackagesController < ApplicationController
 
   def create
     @package = Package.new(package_params)
-    @package.user = current_user
-    @package.musician = @package
+    @package.musician = @musician
 
     if @package.save
       redirect_to musician_path(@musician)
