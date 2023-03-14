@@ -1,7 +1,7 @@
 
 <div  data-controller="booking">
   <%= render "shared/show_card", musician: @musician  %>
-  
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -14,7 +14,6 @@
               <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
               <p>Date: <%= f.date_field :date, class: "input-field" %></p>
               <p> Time: <%= f.time_field :time, class: "input-field" %></p>
-
               <p> <%= f.submit class: "btn-first"%></p>
             <% end %>
           </div>
@@ -25,16 +24,6 @@
         </div>
       </div>
     </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for [@musician, @review] do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.submit "Send your review" %>
-        <% end %>
-    </div>
-
-  </div>
-</div>
+  <% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) } %>
+    <%= render "shared/review_form", musician: @musician, review: @review %>
+  <% end %>

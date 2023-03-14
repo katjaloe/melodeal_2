@@ -46,5 +46,4 @@ class MusiciansController < ApplicationController
   def musician_params
     params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_event, :type_of_musician, :youtube_link, :spotify_link, :soundcloud_link, :instagram_link, :photo)
   end
-
 end

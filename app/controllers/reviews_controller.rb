@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @musician = Musician.find(params[:musician_id])
     @review.musician = @musician
     @review.user = current_user
-
+    @package = Package.where(musician_id: @musician.id)
     if @review.save
       redirect_to musician_path(@musician)
     else
