@@ -1,0 +1,20 @@
+.bookings-container {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: $rose-secondary;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.bookings-accordion-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.booking-card {
+  width: 100%;
+  padding: 20px;
+  margin: 10px auto;
+
+}

@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 body {
-//   background-color: $rose-secondary;
+background-color: $body-background;
 font-family: $body-font;
 font-weight: light;
 }
@@ -11,39 +11,93 @@ h1 {
   font-weight: light;
 }
 
-// // Banner
-// .banner {
-//   // margin-top: 30px;
-//   background-size: cover;
-//   background-position: center;
-//   padding: 75px 0 50px 0;
-// }
+.banner {
+  display: flex;
+  align-items: center;
+  height:100vh;
+}
 
-// .banner h1 {
-//   font-family: $headers-font;
-//   color: $yellow;
-//   margin: 0;
-//   text-align: center;
-//   font-size: 38px;
-//   font-weight: bold;
-// }
+.banner-index-page {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 400px;
+    h2 {
+      color: $rose-secondary;
+      font-family: $body-font;
+    }
+    // the h1 is not yet the right font-family!
+}
 
-// .banner p {
-//   font-family: $headers-font;
-//   font-size: 30px;
-//   text-align: center;
-//   color: $light-yellow;
-// }
 
-// .banner-container {
-//   width: 1100px;
-//   margin: auto;
-//   padding-top: 25px;
-//   padding-bottom: 25px;
-//   display: flex;
-//   background-color: $background-gray;
-//   border: 2px solid $pink;
-//   // display: grid;
-//   // grid-template-columns: 1fr 1fr 1fr;
-//   // grid-gap: 16px;
-// }
+.banner h1 {
+  font-family: $headers-font;
+  color: $orange_primary;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 12px;
+}
+
+.banner h2 {
+  font-family: $headers-font;
+  font-size: 30px;
+  color: $rose-secondary;
+  padding-left: 12px;
+
+}
+
+
+.intro_text h3 {
+  font-family: $body-font;
+  font-size: 25px;
+  color: $rose-secondary;
+  padding-left: 12px;
+}
+
+.intro_text p {
+  font-family: $body-font;
+  font-size: 20px;
+  color: $rose-secondary;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 772px;
+  height: 144px;
+  left: 24px;
+  top: 732px;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.search_form_container {
+  padding: 25px;
+  align-items: center;
+  // opacity: 0.7;
+  // position: relative;
+  left: 176px;
+  color: $rose-secondary;
+  width: 500px;
+
+  .form-check-input:focus {
+    border-color: $orange_primary;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(245, 120, 63, 0.25);
+  }
+  .form-select {
+    background-color: $search_form_background;
+    border-color: $orange_primary;
+    color: #f5783f;
+    border-radius: 15px;
+  }
+
+  .btn-second-orange {
+    margin-top: 10px;
+  }
+}
+
+.banner-info {
+  padding: 16px;
+}

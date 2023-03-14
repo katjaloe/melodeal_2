@@ -1,0 +1,3 @@
+<%# <%= turbo_stream.prepend "shared/booking", partial: "shared/booking", locals: {package: @package, booking: @booking} %> %>
+<%= turbo_stream.replace "shared/booking", partial: "shared/booking", locals: { booking: Booking.new } %>
+<%= turbo_stream.append "layouts/flash", partial: "layouts/flash", locals: { message: "Your Booking request was successful." } %>

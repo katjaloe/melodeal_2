@@ -1,10 +1,11 @@
 .footer {
+  height: 60px;
   width: 100%;
   justify-content: space-between;
   background: $brown-secondary;
   z-index:1;
   color: #F5783F;
-      display: flex;
+  display: flex;
 }
 
 .footer-links {
@@ -23,10 +24,20 @@
   color: $rose-secondary;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding-top: 50px;
+.footer-copyright {
+  margin: auto 5px auto;
 }
+
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   min-height: 100vh;
+//   padding-top: 50px;
+// }
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+ }

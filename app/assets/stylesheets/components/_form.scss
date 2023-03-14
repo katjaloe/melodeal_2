@@ -1,8 +1,8 @@
 .form-devise {
   background: $rose-secondary;
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin-top: 50px;
-  border-radius: 3px;
+  border-radius: 15px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   h2 {
   //   font-size: 25px;
@@ -14,6 +14,8 @@
   //   width: 100%;
     margin-bottom: 20px
   }
+  width: 600px;
+  margin-bottom: 40px;
 }
 
 .form-control:focus {
@@ -22,6 +24,8 @@
   background-color: white;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(245, 120, 63, 0.25);
+
+
 }
 
 
@@ -42,4 +46,30 @@ input#user_email.form-control.string.email.optional {
 
 input#password.form-control.password.optional {
   background: white;
+}
+
+.search-bar {
+// background-color:#ffffff57;
+  position: relative;
+  .form-control {
+    background-color: $search_form_background;
+    border-radius:15px ;
+    border: solid 1px;
+    border-color: $orange_primary;
+    color: $rose-secondary;
+  }
+  .form-control::placeholder {
+    color: $orange_primary;
+    opacity: 1;
+  }
+  .btn-first {
+    position: absolute;
+    right: 0px;
+    height: 37px;
+  }
+
+}
+
+.form-select .dropdown {
+  background-color: aqua;
 }

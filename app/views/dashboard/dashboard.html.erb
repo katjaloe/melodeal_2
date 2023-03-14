@@ -1,0 +1,36 @@
+<div class="banner-index-page" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1621368286550-f54551f39b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);">
+    <div class="banner-info">
+     <h1>Hi <%= @user.first_name %></h1>
+      <h2>see all your bookings here!</h2>
+    </div>
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+  <% end %>
+
+<div class="bookings-container mt-4 ">
+  <h3>See your bookings here:</h3>
+    <div class ="bookings-accordion-container">
+      <% @bookings.each do |booking| %>
+        <div class="booking-card">
+          <%= render partial: "shared/accordion", locals: { booking: booking } %>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+<div class="bookings-container mt-4 ">
+  <h3>See your upcoming gigs</h3>
+    <div class ="bookings-accordion-container">
+      <% @musicians.each do |musician| %>
+        <% musician.packages.each do |package| %>
+          <% package.bookings.each do |booking| %>
+            <div class="booking-card">
+              <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+</div>

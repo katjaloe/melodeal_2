@@ -1,0 +1,137 @@
+.show-card {
+    padding: 15px;
+    width: 1200px;
+    background: $rose-secondary;
+    border-radius: 5px;
+    // box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    user-select: none;
+    color: $brown-secondary;
+    font-family: $headers-font;
+
+    h3 {
+      font-family: $headers-font;
+      color: $orange_primary;
+      font-size: 38px;
+      font-weight: bold;
+      text-indent: 190px;
+    }
+
+    .about {
+      font-family: $body-font;
+      color: $brown-secondary;
+      font-size: 20px;
+      font-weight: lighter;
+      text-align: left;
+      padding-right: 300px;
+    }
+
+    .reviews_show {
+      font-family: $body-font;
+      color: $brown-secondary;
+      font-size: 15px;
+      font-weight: lighter;
+      text-align: left;
+      padding-right: 300px;
+    }
+
+  //   .btn {
+  //     margin: 30px 15px;
+  //     background: #7ce3ff;
+  //     padding: 10px 25px;
+  //     border-radius: 3px;
+  //     border: 1px solid #7ce3ff;
+  //     font-weight: bold;
+  //     font-family: Montserrat;
+  //     cursor: pointer;
+  //     color: #222;
+  //     transition: 0.2s;
+  // }
+
+  // .btn:last-of-type {
+  //     background: transparent;
+  //     border-color: #7ce3ff;
+  //     color: #7ce3ff;
+  // }
+
+  // .btn:hover {
+  //     background: #7ce3ff;
+  //     color: #222;
+  // }
+}
+
+// .cover-photo {
+//     position: relative;
+//     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))
+//     background-size: cover;
+//     background-position: center;
+//     height: 190px;
+//     border-radius: 5px 5px 0 0;
+// }
+
+.profile {
+    position: relative;
+    width: 170px;
+    bottom: -20px;
+    left: 15px;
+    border-radius: 50%;
+    border: 1px solid $brown-secondary;
+    padding: 0px;
+    font: $body-font;
+}
+
+.profile-name {
+    font-size: 20px;
+    margin: 25px 0 0 120px;
+    color: $brown-secondary;
+    font: $body-font
+
+}
+
+.about {
+    margin-top: 30px;
+    line-height: 1.6;
+    color: $brown-secondary;
+    font: $body-font
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flex-packages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.package-card {
+  // display: grid;
+  width: 150px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid $brown-secondary;
+  border-radius: 5px;
+  background-color: $rose-secondary;
+  border-radius: 15px;
+
+  // display: flex;
+}
+
+// .card-image-container {
+//   width: 285px;
+//   height: 250px;
+//   overflow: hidden;
+//   text-align: center;
+//   margin: 5px 5px 5px 5px;
+// }
+// .card-img {
+//   object-fit: cover;
+//   height: 100%;
+//   width: 100%;
+//   img {
+//     width: 100%;
+//     border-radius: 15px
+//   }
+// }

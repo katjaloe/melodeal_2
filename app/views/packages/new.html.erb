@@ -1,2 +1,14 @@
-<h1>Packages#new</h1>
-<p>Find me in app/views/packages/new.html.erb</p>
+<div class="container_packages">
+  <div class="row justify-content-center">
+    <div class="col-12 form-devise">
+    <h1>Create your individual Package! &#x1F4B8; </h1>
+    <h4>This information will be shown to potential customers.</h4>
+      <%= simple_form_for [@musician, @package ] do |f| %>
+        <%= f.input :price, label: "Price €"%>
+        <%= f.input :hours, label: "Hours" %>
+        <%= f.input :description, label: "Tell us more about the Package..." %>
+        <%= f.submit "Add to your profile", class: "btn btn-first" %>
+      <% end %>
+    </div>
+  </div>
+</div>
