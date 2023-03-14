@@ -6,6 +6,6 @@ class Musician < ApplicationRecord
 
   validates :nickname, presence: true
   validates :location, presence: true
-  validates :type_of_event, presence: true
+  # validates :type_of_event, presence: true
   validates :type_of_musician, presence: true
 end
