@@ -2,11 +2,15 @@ class MusiciansController < ApplicationController
   before_action :set_musician, only: [ :show ]
 
   def index
+    # raise
     @filter = params["filter"]
     if @filter.present?
       @location = @filter["location"]
-      @type_of_event = @filter["type_of_event"]
+      # @type_of_event = @filter["type_of_event"]
       @musicians = Musician.where(location: @location)
+    elsif params[:query].present? && params["location"].present?
+      sql_query = "first_name ILIKE :query OR location ILIKE :query OR type_of_musician ILIKE :query"
+      @musicians = Musician.where(sql_query, query: "%#{params[:query]}%").where(location: params["location"])
     elsif params[:query].present?
       sql_query = "first_name ILIKE :query OR location ILIKE :query OR type_of_musician ILIKE :query"
       @musicians = Musician.where(sql_query, query: "%#{params[:query]}%")
@@ -25,6 +29,7 @@ class MusiciansController < ApplicationController
 
   def new
     @musician = Musician.new
+    @package = Package.new
   end
 
   def create
@@ -47,5 +52,4 @@ class MusiciansController < ApplicationController
   def musician_params
     params.require(:musician).permit(:first_name, :last_name, :nickname, :location, :description, :type_of_musician, :youtube_link, :spotify_link, :soundcloud_link, :instagram_link, :photo)
   end
-
 end
