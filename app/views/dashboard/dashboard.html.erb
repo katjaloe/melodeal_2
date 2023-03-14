@@ -4,6 +4,9 @@
       <h2>see all your bookings here!</h2>
     </div>
 </div>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg %>
+  <% end %>
 
 <div class="bookings-container mt-4 ">
   <h3>See your bookings here:</h3>
