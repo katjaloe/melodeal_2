@@ -7,11 +7,20 @@
       </div>
     </div>
   </div>
+
   <div class="card-content">
     <h3><%=musician.first_name%></h3>
-    <div class="location"><p>📍<%=musician.location%></p>
+    <div class="ratings">
+      <% musician.average_rating.round.times do %>
+        <i class="fa fa-star rating-color"></i>
+      <% end %>
+      <% (5 - musician.average_rating.round).times do %>
+        <i class="fa fa-star"></i>
+      <% end %>
     </div>
-    <button class="btn btn-second-orange mb-4">Following</button>
-      <p class="description"><%= musician.description.slice(0..96) + "..." %></p>
+     <div class="location"><p>📍<%=musician.location%></p>
+     </div>
+     <p class="description"><%= musician.description.slice(0..96) + "..." %></p>
+     <button class="btn btn-second-orange mb-4">Following</button>
   </div>
 <% end %>
