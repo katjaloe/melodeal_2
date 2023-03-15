@@ -7,12 +7,13 @@
 
 <% if flash[:info] %>
   <div class="info">
-  <%= flash[:info] %>
+    <%= flash[:info] %>
   </div>
 <% end %>
 
 <div class="bookings-container mt-4 ">
   <h3>See your bookings here:</h3>
+  <% if @bookings.present? %>
     <div class ="bookings-accordion-container">
       <% @bookings.each do |booking| %>
         <div class="booking-card">
@@ -20,7 +21,14 @@
         </div>
       <% end %>
     </div>
+  <% else %>
+    <p>You don't have any bookings yet!</p>
+    <p>Book a musician now.</p>
+    <p><%= link_to "all musicians", musicians_path, class: "btn btn-first" %></p>
+  <% end %>
 </div>
+
+
 
 <div class="bookings-container mt-4 ">
   <h3>See your upcoming gigs:</h3>
@@ -28,9 +36,13 @@
       <% @musicians.each do |musician| %>
         <% musician.packages.each do |package| %>
           <% package.bookings.each do |booking| %>
-            <div class="booking-card">
-              <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
-            </div>
+            <%# <% if booking.present? %>
+              <div class="booking-card">
+                <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
+              </div>
+            <%# <% else %>
+              <%# <p>Hi</p> %>
+            <%# <% end %>
           <% end %>
         <% end %>
       <% end %>

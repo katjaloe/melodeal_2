@@ -1,6 +1,10 @@
 <div id="message-<%= message.id %>">
   <small>
-    <%= image_tag message.user.photo, class: "avatar" %>
+    <% if message.user.photo.attached? %>
+      <%= image_tag message.user.photo, class: "avatar" %>
+    <% else %>
+      <%= image_tag "Icon_User.png", class: "avatar" %>
+    <% end %>
     <strong><%= message.user.first_name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>

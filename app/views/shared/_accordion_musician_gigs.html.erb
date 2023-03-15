@@ -3,34 +3,56 @@
     <% if booking.status == "pending" %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
-          <div class="pending">
-            <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
+            </div>
+            <div>
+              <div class="accepted">
+                <%= booking.status %>
+              </div>
+            </div>
           </div>
         </button>
       </h2>
     <% elsif booking.status == "accepted" %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your booking for <%= booking.date.strftime("%A, %d %b %Y") %> is
-            <div class="accepted">
-              <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
             </div>
+            <div>
+              <div class="pending">
+                <%= booking.status %>
+              </div>
+            </div>
+          </div>
         </button>
       </h2>
     <% else %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your booking for <%= booking.date.strftime("%A, %d %b %Y") %> is
-          <div class="declined">
-            <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
+            </div>
+            <div>
+              <div class="declined">
+                <%= booking.status %>
+              </div>
+            </div>
           </div>
         </button>
       </h2>
     <% end %>
       <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <%= image_tag booking.user.photo, class: "avatar" %>
+        <% if booking.user.photo.attached? %>
+            <%= image_tag booking.user.photo, class: "avatar" %>
+        <% else %>
+          <%= image_tag "Icon_User.png", class: "avatar" %>
+        <% end %>
           <strong> <%= booking.user.first_name %></strong>
           <p>booked the <%= booking.package.hours.to_i %> hour package with you!</p>
           <%# <%= booking.package.description %>

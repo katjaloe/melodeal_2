@@ -3,17 +3,13 @@
 }
 
 #accordionExample .accordion-item {
-  // font-size: 0.5em;
-  // border-top: 2em solid blue;
-  // border-bottom: 2em solid blue;
-  // border-left: 2em solid blue;
-  // border-right: 2em solid blue;
   border-radius: 15px;
 }
 
 #accordionExample .accordion-button {
   border-radius: 15px;
   background-color: white;
+
 
   // .accepted {
   //   background-color: $green-contrast;
@@ -25,6 +21,7 @@
   .flex-container {
     background-color: brown;
 }
+
 }
 
 .pending {
@@ -33,6 +30,9 @@
   background-color: $rose-secondary;
   color: $brown-secondary;
   margin-bottom: 4px;
+  margin: 5px;
+  align-items: end;
+
 }
 
 .accepted {
@@ -41,6 +41,7 @@
   background-color: $green-contrast;
   color: $brown-secondary;
   margin-bottom: 4px;
+  margin: 5px;
 }
 
 .declined {
@@ -49,10 +50,5 @@
   background-color: lightgray;
   color: $brown-secondary;
   margin-bottom: 4px;
-}
+  margin: 5px;
 
-
-// .accordion .accordion-item + .accordion-item {
-// margin-top: 2rem;
-// border-top: 2em solid blue;
-// }

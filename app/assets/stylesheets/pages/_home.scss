@@ -93,7 +93,7 @@ h1 {
   .form-select {
     background-color: $search_form_background;
     border-color: $orange_primary;
-    color: #f5783f;
+    color: $brown-secondary;
     border-radius: 15px;
   }
 
@@ -106,4 +106,9 @@ h1 {
 
 .banner-info {
   padding: 16px;
+}
+
+.no-musicians-info {
+  margin: 15px auto ;
+  text-align: center;
 }
