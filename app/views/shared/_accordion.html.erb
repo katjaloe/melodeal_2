@@ -3,42 +3,61 @@
     <% if booking.status == "pending" %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
-          <div class="pending">
-            <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
+            </div>
+            <div>
+              <div class="pending">
+                <%= booking.status %>
+              </div>
+            </div>
           </div>
         </button>
       </h2>
     <% elsif booking.status == "accepted" %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
-            <div class="accepted">
-              <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
             </div>
+            <div>
+              <div class="accepted">
+                <%= booking.status %>
+              </div>
+            </div>
+          </div>
         </button>
       </h2>
     <% else %>
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=booking.id%>" aria-expanded="false" aria-controls="collapse">
-          Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %> is
-          <div class="declined">
-            <%= booking.status %>
+          <div class="accordion-header-grid">
+            <div>
+              <p>Your MeloDeal for <%= booking.date.strftime("%A, %d %b %Y") %></p>
+            </div>
+            <div>
+              <div class="declined">
+                <%= booking.status %>
+              </div>
+            </div>
           </div>
         </button>
       </h2>
     <% end %>
-      <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <p>You booked a MeloDeal with </p>
-          <%= image_tag booking.package.musician.photo, class: "avatar" %>
-          <strong><%= booking.package.musician.first_name %> </strong>
-          <%= booking.package.description %>
-          <%= link_to "Chat with #{booking.package.musician.first_name}", show_chat_path(booking), class:"btn btn-first" %>
-          <% if booking.date < Date.today && booking.status == "accepted" %>
-            <%= link_to "Review #{booking.package.musician.first_name}", musician_path(booking.package.musician_id), class: "btn btn-first" %>
-          <% end %>
-        </div>
+    <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <%= image_tag booking.package.musician.photo, class: "avatar" %>
+        <strong><%= booking.package.musician.first_name %> </strong>🎶</p>
+        <p>📍 <%= booking.package.musician.location %></p>
+        <p>✏️ You will pay <%= booking.package.price.to_i %> € for <%= booking.package.hours.to_i %> hours.</p>
+        <%= link_to "Chat with #{booking.package.musician.first_name}", show_chat_path(booking), class:"btn btn-first" %>
+        <%= link_to "#{booking.package.musician.first_name}'s profile", musician_path(booking.package.musician), class:"btn btn-first" %>
+        <% if booking.date < Date.today && booking.status == "accepted" %>
+          <%= link_to "Leave a rating for #{booking.package.musician.first_name}", musician_path(booking.package.musician_id), class: "btn btn-second-orange" %>
+        <% end %>
       </div>
+    </div>
   </div>
 </div>

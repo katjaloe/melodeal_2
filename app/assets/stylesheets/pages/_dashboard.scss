@@ -8,13 +8,47 @@
 }
 
 .bookings-accordion-container {
+  width: 80%;
+  justify-content: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-column-gap: 10px;
+  margin: 0 auto;
 }
 
 .booking-card {
   width: 100%;
-  padding: 20px;
-  margin: 10px auto;
+  padding: 5px;
+  margin: 2px auto;
 
+  .btn-second-orange:hover {
+    color: $brown-secondary;
+    border: 1px solid $brown-secondary;
+  }
+
+  p {
+    margin-bottom: 2px;
+    text-align: left;
+  }
+}
+
+.accordion-button {
+  padding: 5px 10px;
+
+
+  p {
+    color: $brown-secondary;
+  }
+
+
+
+}
+
+.accordion-header-grid {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  align-items: center;
+  margin: auto 15px;
 }
