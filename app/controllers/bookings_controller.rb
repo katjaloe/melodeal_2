@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.package = @package
     @booking.status = 0
     if @booking.save
-      flash[:notice] = "Your booking request was successful, find the infos here ⬇️"
+      flash[:info] = "Your booking request was successful, find the infos here ⬇️"
       redirect_to dashboard_path
     else
       render :show, status: :unprocessable_entity
