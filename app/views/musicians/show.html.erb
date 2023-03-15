@@ -15,13 +15,14 @@
               <div class="modal-footer">
                 <p> <%= f.submit class: "btn-first"%></p>
               </div>
-            <% end %>
+           <% end %>
           </div>
         </div>
       </div>
     </div>
 </div>
-
-<% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
-  <%= render "shared/review_form", musician: @musician, review: @review %>
-<% end %>
+<div>
+  <% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
+    <%= render "shared/review_form", musician: @musician, review: @review %>
+  <% end %>
+</div>
