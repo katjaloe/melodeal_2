@@ -10,7 +10,6 @@ class Musician < ApplicationRecord
   validates :location, presence: true
   validates :type_of_musician, presence: true
   validates :description, presence: true
-  validates :photo, presence: true
 
   def average_rating
     ratings = reviews.map do |review|
@@ -20,8 +19,4 @@ class Musician < ApplicationRecord
 
     ratings.sum / ratings.length
   end
-
-
-
-
 end
