@@ -2,6 +2,13 @@
   <div class="row justify-content-center d-grid mt-4">
     <div class="col-12">
       <div class="show-card">
+
+  <div class="package-button">
+    <% if @user.id == @musician.user_id %>
+    <button type="button" class="btn btn-second-orange mb-4"><%= link_to "Create Package", new_musician_package_path(@musician) %>
+    <% end %>
+    </div>
+
         <div class="cover-photo">
           <%= image_tag(musician.photo, class: "profile") %>
         </div>
@@ -18,8 +25,8 @@
               <div class="package-card">
                 <small><%= package.description %></small>
                 <hr>
-                <p>Price: <%= package.price %></p>
-                <p>Hours: <%= package.hours %></p>
+                <p> <%= package.price.to_i %> €
+                for <%= package.hours.to_i %> hours!</p>
                 <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
                   Book!
                 </button>
@@ -29,6 +36,8 @@
               <% @musician.reviews.each do |review| %>
                 <%= review.content %> 
                 <%= review.rating %>
+                <%# <%= review.rating.average(:rating) %>
+
               <% end %>
           </div>
           </div>

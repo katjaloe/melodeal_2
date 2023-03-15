@@ -4,7 +4,7 @@
       <%= simple_form_for [@musician, @review] do |f| %>
         <%= f.input :content %>
         <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.submit "Send your review" %>
+        <%= f.submit "Send your review", class: "btn btn-first"%>
         <% end %>
     </div>
   </div>
