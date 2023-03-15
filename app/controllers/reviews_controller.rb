@@ -17,6 +17,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def average_rating
+
+  end
+
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
