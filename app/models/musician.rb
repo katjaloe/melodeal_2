@@ -19,8 +19,4 @@ class Musician < ApplicationRecord
 
     ratings.sum / ratings.length
   end
-
-
-
-
 end
