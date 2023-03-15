@@ -10,7 +10,7 @@
   background-color: $rose-secondary;
   border-radius: 15px;
   width: 300px;
-  height: 400px;
+  height: 510px;
   text-align: left;
   margin-top: 15px;
 
@@ -37,17 +37,16 @@
 
 .musician-tag {
   position: absolute;
-  bottom: 8px;
-  right: 16px;
-
+  bottom: -5px;
+  right: 10px;
+}
   p {
     padding: 7px;
     border-radius: 15px;
     background-color: $rose-secondary;
     color: $brown-secondary;
-    margin-bottom: 4px;
   }
-}
+
 
 h1 {
   font-family: $headers-font;
@@ -57,9 +56,9 @@ h2 {
 }
  h3 {
   color: $orange_primary;
-  font-weight: lighter;
-  padding-left: 10px;
-  padding-right: 5px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 2px;;
  }
  h4 {
   color: $brown-secondary;
@@ -72,16 +71,26 @@ h2 {
 p {
   text-overflow: ellipsis;
   color: $brown-secondary;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
   font-family: $body-font;
+  text-align: left;
+
 }
 .card-content {
   text-decoration: none;
-  text-overflow: hidden;
-  padding-left: 15px;
+  height: 45%;
+    p {
+      margin-bottom: 1px;
+      margin-left: 5px;
+    }
+    button {
+      margin-left: 10px;
+    }
+    button:hover {
+      color:$green-contrast;
+      border: 1px solid $green-contrast;
+
+    }
+
 }
 .instrument-tag {
   border-radius: 15px;
@@ -94,12 +103,7 @@ p {
   margin-left: 10px;
 
 }
-// .card-category {
-//   width: 380px;
-//   height: 250px;
-//   background-position: right;
-//   background-size: contain;
-// }
+
 
 
 

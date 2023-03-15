@@ -8,6 +8,7 @@
     color: $brown-secondary;
     font-family: $headers-font;
 
+
     h3 {
       font-family: $headers-font;
       color: $orange_primary;
@@ -23,6 +24,7 @@
       font-weight: lighter;
       text-align: left;
       padding-right: 300px;
+      margin-left: 12px;
     }
 
     .reviews_show {
@@ -94,30 +96,49 @@
     font: $body-font
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.flex-packages {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.package-card {
-  // display: grid;
-  width: 150px;
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid $brown-secondary;
-  border-radius: 5px;
+.package-container {
+  width: 500px;
+  margin: 10 auto;
   background-color: $rose-secondary;
   border-radius: 15px;
+  margin-bottom: 30px;
 
-  // display: flex;
+  .accordion-item {
+  margin: 15px;
+  }
+
+  .accordion-button {
+    // border-radius: 15px;
+  }
 }
+
+.packages-accordion-container {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+// .flex-container {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-evenly;
+
+
+// .flex-packages {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+// }
+
+// .package-card {
+//   // display: grid;
+//   width: 150px;
+//   padding: 20px;
+//   margin: 10px;
+//   border: 1px solid $brown-secondary;
+//   border-radius: 5px;
+//   background-color: $rose-secondary;
+//   border-radius: 15px;
+// }
 
 // .card-image-container {
 //   width: 285px;
@@ -135,3 +156,7 @@
 //     border-radius: 15px
 //   }
 // }
+
+.accordion-item:not(:first-of-type) {
+  border-top: 1px solid #F5783F;
+}

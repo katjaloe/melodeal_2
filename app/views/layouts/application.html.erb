@@ -8,11 +8,10 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
+  <%= favicon_link_tag asset_path('Logo_sand.png') %>
   </head>
 
   <body>
-
     <div class="page-container">
       <div class="navbar-container">
         <%= render "shared/navbar" %>
@@ -22,10 +21,8 @@
       </div>
       <div class="footer-container">
         <%= render "shared/footer" %>
-        </div>
+      </div>
     </div>
-    <%# <%= render "shared/navbar" %>
-    <%# <%= yield %>
-    <%# <%= render "shared/footer" %>
   </body>
+
 </html>

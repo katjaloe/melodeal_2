@@ -1,29 +1,6 @@
 <div data-controller="booking">
-  <%= render "shared/show_card", musician: @musician %>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Book your MeloDeal with <%= @musician.first_name %> </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for @booking, data: { controller: "flatpickr",
-                flatpickr_enable_time: true } do |f| %>
-              <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
-              <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } , label: "Choose Date & Time!" %>
-              <%# <%= f.input :time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-              <div class="modal-footer">
-                <p> <%= f.submit class: "btn-first"%></p>
-              </div>
-           <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+  <%= render "shared/show_card", musician: @musician, booking: @booking %>
 </div>
-<div>
-  <% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
-    <%= render "shared/review_form", musician: @musician, review: @review %>
-  <% end %>
-</div>
+<% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
+  <%= render "shared/review_form", musician: @musician, review: @review %>
+<% end %>
