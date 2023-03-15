@@ -18,3 +18,21 @@ p {
 .modal-header {
   text-align: center;
 }
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+
+  .form-control {
+    display: none;
+  }
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.modal-content {
+  border-radius: 15px;
+  background-color: $rose-secondary;
+}

@@ -10,7 +10,7 @@
   background-color: $rose-secondary;
   border-radius: 15px;
   width: 300px;
-  height: 400px;
+  height: 500px;
   text-align: left;
   margin-top: 15px;
 
@@ -45,7 +45,7 @@
     border-radius: 15px;
     background-color: $rose-secondary;
     color: $brown-secondary;
-    margin-bottom: 4px;
+    // margin-bottom: 4px;
   }
 }
 
@@ -57,9 +57,9 @@ h2 {
 }
  h3 {
   color: $orange_primary;
-  font-weight: lighter;
-  padding-left: 10px;
-  padding-right: 5px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 2px;;
  }
  h4 {
   color: $brown-secondary;
@@ -72,16 +72,18 @@ h2 {
 p {
   text-overflow: ellipsis;
   color: $brown-secondary;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
   font-family: $body-font;
+    .description {
+      // overflow: hidden;
+      // white-space: nowrap;
+      // text-overflow: ellipsis;
+      // max-width: 100px;
+    }
 }
 .card-content {
   text-decoration: none;
-  overflow: hidden;
-  padding-left: 15px;
+  height: 45%;
+
 }
 .instrument-tag {
   border-radius: 15px;
@@ -94,12 +96,7 @@ p {
   margin-left: 10px;
 
 }
-// .card-category {
-//   width: 380px;
-//   height: 250px;
-//   background-position: right;
-//   background-size: contain;
-// }
+
 
 
 
