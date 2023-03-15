@@ -8,10 +8,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <%= simple_form_for @booking do |f| %>
+            <%= simple_form_for @booking, data: { controller: "flatpickr",
+                flatpickr_enable_time: true } do |f| %>
               <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
-              <p>Date: <%= f.date_field :date, class: "input-field" %></p>
-              <p> Time: <%= f.time_field :time, class: "input-field" %></p>
+              <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } , label: "Choose Date & Time!" %>
+              <%# <%= f.input :time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
               <div class="modal-footer">
                 <p> <%= f.submit class: "btn-first"%></p>
               </div>
