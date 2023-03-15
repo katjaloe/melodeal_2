@@ -70,96 +70,496 @@ puts "created users"
 
 puts "Creating Musicians"
 
-# female - colleen
-10.times do
-  musicians_colleen = Musician.create!(
+  cello_female_1 = Musician.create!(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     nickname: Faker::Music.band,
     location: location.sample,
     description: description.sample,
-    type_of_musician: type_of_musician.sample,
-    youtube_link: Faker::Internet.url,
-    spotify_link: Faker::Internet.url,
+    type_of_musician: "Cello",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
     user: colleen
+
   )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912646/joel-vogt-XAdPSpLhHpg-unsplash_qjpxke.jpg")
+  cello_female_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
 
-  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
-  musicians_colleen.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-end
-
-10.times do
-  musicians_katja = Musician.create!(
-    first_name: Faker::Name.male_first_name,
-    last_name: Faker::Name.last_name,
-    nickname: Faker::Music.band,
-    location: location.sample,
-    description: description.sample,
-    type_of_musician: type_of_musician.sample,
-    youtube_link: Faker::Internet.url,
-    spotify_link: Faker::Internet.url,
-    user: katja
-  )
-
-  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
-  musicians_katja.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-end
-
-10.times do
-  musicians_louise = Musician.create!(
-    first_name: Faker::Name.female_first_name,
-    last_name: Faker::Name.last_name,
-    nickname: Faker::Music.band,
-    location: location.sample,
-    description: description.sample,
-    type_of_musician: type_of_musician.sample,
-    youtube_link: Faker::Internet.url,
-    spotify_link: Faker::Internet.url,
-    user: louise
-  )
-
-  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
-  musicians_louise.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-end
-
-10.times do
-  @musicians_besher = Musician.create!(
-    first_name: Faker::Name.male_first_name,
-    last_name: Faker::Name.last_name,
-    nickname: Faker::Music.band,
-    location: location.sample,
-    description: description.sample,
-    type_of_musician: type_of_musician.sample,
-    youtube_link: Faker::Internet.url,
-    spotify_link: Faker::Internet.url,
-    user: besher
-  )
-
-  file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
-  @musicians_besher.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-end
-
-puts "created #{Musician.count} musicians"
-
-puts "creating packages"
-
-Musician.all.each do |musician|
   Package.create!(
-    description: "You will get 2 hours of live music. I can play every song you like!",
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id: cello_female_1.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
     price: 200,
     hours: 2,
-    musician_id: musician.id
+    musician_id: cello_female_1.id
   )
 
+
+piano_male_2 = Musician.create!(
+  first_name: Faker::Name.male_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Piano",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912159/soundtrap-BU816BGrP0U-unsplash_wia3rv.jpg")
+piano_male_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Package Large",
+  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 350,
+  hours: 4,
+  musician_id: piano_male_2.id
+)
+
+Package.create!(
+  title: "Package Small",
+  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 200,
+  hours: 2,
+  musician_id: piano_male_2.id
+)
+
+
+  cello_male_1 = Musician.create!(
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Cello",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912645/jeana-bala-atD181puoXM-unsplash_f5hflb.jpg")
+  cello_male_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
   Package.create!(
+    title: "Package Large",
     description: "I will play 4 hours at your event. I would have to breaks with 10 minutes, besides that you will listen to the best live music!",
     price: 350,
     hours: 4,
-    musician_id: musician.id
+    musician_id: cello_male_1.id
   )
-end
 
-# @musicians_besher.each do |musician|
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id: cello_male_1.id
+  )
+
+  guitar_male_1 = Musician.create!(
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Guitar",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912157/thiago-borrere-alvim-bf8APnBxoCk-unsplash_fg2vtk.jpg")
+  guitar_male_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id: guitar_male_1.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id: guitar_male_1.id
+  )
+
+
+  vocal_female_1 = Musician.create!(
+    first_name: Faker::Name.female_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Vocal",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912150/anish-prajapati-5Sxh_zg5Des-unsplash_njzpww.jpg")
+  vocal_female_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id: vocal_female_1.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id: vocal_female_1.id
+  )
+
+  cello_male_2 = Musician.create!(
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Cello",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912154/kael-bloom-0Fko0cLI2VQ-unsplash_uj1ll3.jpg")
+  cello_male_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id: cello_male_2.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id: cello_male_2.id
+  )
+
+  guitar_male_2 = Musician.create!(
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Guitar",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912157/leonardo-zorzi-vVtkT4ny8hM-unsplash_d3jida.jpg")
+  guitar_male_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id:  guitar_male_2.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id:  guitar_male_2.id
+  )
+
+
+  cello_female_2 = Musician.create!(
+    first_name: Faker::Name.female_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Cello",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912158/sam-moghadam-khamseh-VMFLpCrDpFM-unsplash_ixeddf.jpg")
+  cello_female_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id:  guitar_male_2.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id:  guitar_male_2.id
+  )
+
+  violin_female_1 = Musician.create!(
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    nickname: Faker::Music.band,
+    location: location.sample,
+    description: description.sample,
+    type_of_musician: "Violin",
+    youtube_link: "https://www.youtube.com/@LeWagon/about",
+    spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+    soundcloud_link: "https://soundcloud.com/RIHANNA",
+    instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+    user: colleen
+  )
+  file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912155/luwadlin-bosman-pD1KUHCZ9Yc-unsplash_dkp1ua.jpg")
+  violin_female_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+  Package.create!(
+    title: "Package Large",
+    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 350,
+    hours: 4,
+    musician_id:  violin_female_1.id
+  )
+
+  Package.create!(
+    title: "Package Small",
+    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    price: 200,
+    hours: 2,
+    musician_id:  violin_female_1.id
+  )
+
+
+guitar_female_1 = Musician.create!(
+  first_name: Faker::Name.female_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Guitar",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912154/jakayla-toney-_SUo0bFBMRc-unsplash_urmkp6.jpg")
+guitar_female_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Package Large",
+  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 350,
+  hours: 4,
+  musician_id:  guitar_female_1.id
+)
+
+Package.create!(
+  title: "Package Small",
+  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 200,
+  hours: 2,
+  musician_id:  guitar_female_1.id
+)
+
+
+vocal_female_2 = Musician.create!(
+  first_name: Faker::Name.female_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Vocal",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912150/ben-collins-uPmfKSOT5f8-unsplash_b5coj3.jpg")
+vocal_female_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Package Large",
+  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 350,
+  hours: 4,
+  musician_id:  vocal_female_2.id
+)
+
+Package.create!(
+  title: "Package Small",
+  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 200,
+  hours: 2,
+  musician_id:  vocal_female_2.id
+)
+
+
+piano_male_1 = Musician.create!(
+  first_name: Faker::Name.male_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Piano",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912155/platforma-za-drustveni-centar-cakovec-JKSXxal-UAI-unsplash_t478ru.jpg")
+piano_male_1.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Package Large",
+  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 350,
+  hours: 4,
+  musician_id:  piano_male_1.id
+)
+
+Package.create!(
+  title: "Package Small",
+  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 200,
+  hours: 2,
+  musician_id:  piano_male_1.id
+)
+
+
+violin_female_2 = Musician.create!(
+  first_name: Faker::Name.male_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Violin",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/c_fill,h_1000,w_1000/v1678912153/lena-grimalkin-Wx6zfKBUJXg-unsplash_putcqn.jpg")
+violin_female_2.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+
+Package.create!(
+  title: "Package Large",
+  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 350,
+  hours: 4,
+  musician_id:  violin_female_2.id
+)
+
+Package.create!(
+  title: "Package Small",
+  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  price: 200,
+  hours: 2,
+  musician_id:  violin_female_2.id
+)
+
+
+# 10.times do
+#   musicians_katja = Musician.create!(
+#     first_name: Faker::Name.male_first_name,
+#     last_name: Faker::Name.last_name,
+#     nickname: Faker::Music.band,
+#     location: location.sample,
+#     description: description.sample,
+#     type_of_musician: type_of_musician.sample,
+#     youtube_link: Faker::Internet.url,
+#     spotify_link: Faker::Internet.url,
+#     user: katja
+#   )
+
+#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
+#   musicians_katja.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+# end
+
+# 10.times do
+#   musicians_louise = Musician.create!(
+#     first_name: Faker::Name.female_first_name,
+#     last_name: Faker::Name.last_name,
+#     nickname: Faker::Music.band,
+#     location: location.sample,
+#     description: description.sample,
+#     type_of_musician: type_of_musician.sample,
+#     youtube_link: Faker::Internet.url,
+#     spotify_link: Faker::Internet.url,
+#     user: louise
+#   )
+
+#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
+#   musicians_louise.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+# end
+
+# 10.times do
+#   @musicians_besher = Musician.create!(
+#     first_name: Faker::Name.male_first_name,
+#     last_name: Faker::Name.last_name,
+#     nickname: Faker::Music.band,
+#     location: location.sample,
+#     description: description.sample,
+#     type_of_musician: type_of_musician.sample,
+#     youtube_link: Faker::Internet.url,
+#     spotify_link: Faker::Internet.url,
+#     user: besher
+#   )
+
+#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
+#   @musicians_besher.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+# end
+
+puts "created #{Musician.count} musicians"
+
+# puts "creating packages"
+
+# Musician.all.each do |musician|
+#   Package.create!(
+#     description: "You will get 2 hours of live music. I can play every song you like!",
+#     price: 200,
+#     hours: 2,
+#     musician_id: musician.id
+#   )
+
 #   Package.create!(
 #     description: "I will play 4 hours at your event. I would have to breaks with 10 minutes, besides that you will listen to the best live music!",
 #     price: 350,
@@ -168,14 +568,23 @@ end
 #   )
 # end
 
-# Musician.all.each do |musician|
-#   Package.create!(
-#     description: "Package Large",
-#     price: rand(310..500),
-#     hours: rand(3..5),
-#     musician_id: musician.id
-#   )
-# end
+# # @musicians_besher.each do |musician|
+# #   Package.create!(
+# #     description: "I will play 4 hours at your event. I would have to breaks with 10 minutes, besides that you will listen to the best live music!",
+# #     price: 350,
+# #     hours: 4,
+# #     musician_id: musician.id
+# #   )
+# # end
+
+# # Musician.all.each do |musician|
+# #   Package.create!(
+# #     description: "Package Large",
+# #     price: rand(310..500),
+# #     hours: rand(3..5),
+# #     musician_id: musician.id
+# #   )
+# # end
 
 
-puts "created #{Package.count} packages"
+# puts "created #{Package.count} packages"

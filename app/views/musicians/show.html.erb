@@ -1,6 +1,8 @@
+<div class="container show-card d-flex flex-column">
 <div data-controller="booking">
   <%= render "shared/show_card", musician: @musician, booking: @booking %>
 </div>
 <% if @musician.packages.any? && current_user.bookings.any? { |booking| @musician.packages.include?(Package.find(booking.package_id)) && booking.date < Date.today } %>
   <%= render "shared/review_form", musician: @musician, review: @review %>
 <% end %>
+</div>
