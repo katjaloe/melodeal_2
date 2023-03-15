@@ -19,26 +19,26 @@ class BookingsController < ApplicationController
       flash[:info] = "Your booking request was successful, find the infos here ⬇️"
       redirect_to dashboard_path
     else
-      render :show, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   def accept
     @booking = Booking.find(params[:id])
     @booking.update(status: 1)
-    redirect_to musicians_path
+    redirect_to dashboard_path
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.update(status: 2)
-    redirect_to musicians_path
+    redirect_to dashboard_path
   end
 
   def completed
     @booking = Booking.find(params[:id])
     @booking.update(status: 3)
-    redirect_to musicians_path
+    redirect_to dashboard_path
   end
 
   def show_chat

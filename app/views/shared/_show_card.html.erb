@@ -25,8 +25,8 @@
               <div class="package-card">
                 <small><%= package.description %></small>
                 <hr>
-                <p>Price: <%= package.price %></p>
-                <p>Hours: <%= package.hours %></p>
+                <p> <%= package.price.to_i %> €
+                for <%= package.hours.to_i %> hours!</p>
                 <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
                   Book!
                 </button>

@@ -11,5 +11,5 @@ class Musician < ApplicationRecord
   validates :type_of_musician, presence: true
   validates :nickname, presence: true
   validates :description, presence: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
 end
