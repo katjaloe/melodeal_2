@@ -7,9 +7,18 @@
       </div>
     </div>
   </div>
-  <p><%= musician.average_rating %></p>
+  <div class="ratings">
+    <% musician.average_rating.round.times do %>
+      <i class="fa fa-star rating-color"></i>
+    <% end %>
+    <% (5 - musician.average_rating.round).times do %>
+      <i class="fa fa-star"></i>
+    <% end %>
+</div>
   <div class="card-contend">
     <h3><%=musician.first_name%></h3>
     <p><%=musician.first_name %> <%=musician.last_name %>is one of our favs!. Also known as <%=musician.nickname %></p>
   </div>
+
+
 <% end %>
