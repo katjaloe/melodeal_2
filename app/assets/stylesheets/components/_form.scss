@@ -56,10 +56,10 @@ input#password.form-control.password.optional {
     border-radius:15px ;
     border: solid 1px;
     border-color: $orange_primary;
-    color: $rose-secondary;
+    color: $dark-brown;
   }
   .form-control::placeholder {
-    color: $orange_primary;
+    color: $dark-brown;
     opacity: 1;
   }
   .btn-first {

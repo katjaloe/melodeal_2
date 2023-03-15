@@ -48,7 +48,11 @@
     <% end %>
       <div id="collapse_<%=booking.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <%= image_tag booking.user.photo, class: "avatar" %>
+        <% if booking.user.photo.attached? %>
+            <%= image_tag booking.user.photo, class: "avatar" %>
+        <% else %>
+          <%= image_tag "Icon_User.png", class: "avatar" %>
+        <% end %>
           <strong> <%= booking.user.first_name %></strong>
           <p>booked the <%= booking.package.hours.to_i %> hour package with you!</p>
           <%# <%= booking.package.description %>

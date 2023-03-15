@@ -20,14 +20,16 @@
   </div>
 
   </div>
-    <div class="">
-    <% if @musicians.count < 1 then %>
-    <h3>No musicians found. Please adjust your filter or see</h3>
-    <%= link_to "all musicians", musicians_path, class: "btn btn-first" %>
-   <% end %>
-</div>
-  <div class="cards-container container">
-    <% @musicians.each do |musician|  %>
-      <%= render partial: "shared/card", locals: { musician: musician } %>
-    <% end %>
-  </div>
+    <div class="no-musicians-info">
+      <% if @musicians.count < 1 then %>
+        <h3>No musicians found.
+        <br>
+        Please adjust your filter or see</h3>
+        <p><%= link_to "all musicians", musicians_path, class: "btn btn-first" %></p>
+      <% end %>
+    </div>
+    <div class="cards-container container">
+      <% @musicians.each do |musician|  %>
+        <%= render partial: "shared/card", locals: { musician: musician } %>
+      <% end %>
+    </div>

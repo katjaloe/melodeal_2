@@ -36,9 +36,13 @@
       <% @musicians.each do |musician| %>
         <% musician.packages.each do |package| %>
           <% package.bookings.each do |booking| %>
-            <div class="booking-card">
-              <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
-            </div>
+            <%# <% if booking.present? %>
+              <div class="booking-card">
+                <%= render partial: "shared/accordion_musician_gigs", locals: { musician: musician, package: package, booking: booking } %>
+              </div>
+            <%# <% else %>
+              <%# <p>Hi</p> %>
+            <%# <% end %>
           <% end %>
         <% end %>
       <% end %>
