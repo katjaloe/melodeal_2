@@ -8,4 +8,12 @@ class Musician < ApplicationRecord
   validates :location, presence: true
   validates :type_of_event, presence: true
   validates :type_of_musician, presence: true
+  def average_rating
+    ratings = reviews.map do |review|
+      review.rating / 1.0
+    end
+    return 0 if ratings.length.zero?
+
+    ratings.sum / ratings.length
+  end
 end
