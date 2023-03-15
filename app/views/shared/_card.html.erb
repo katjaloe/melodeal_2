@@ -7,9 +7,11 @@
       </div>
     </div>
   </div>
-  <p><%= musician.average_rating %></p>
-  <div class="card-contend">
+  <div class="card-content">
     <h3><%=musician.first_name%></h3>
-    <p><%=musician.first_name %> <%=musician.last_name %>is one of our favs!. Also known as <%=musician.nickname %></p>
+    <div class="location"><p>📍<%=musician.location%></p>
+    </div>
+    <button class="btn btn-second-orange mb-4">Following</button>
+      <p class="description"><%= musician.description.slice(0..96) + "..." %></p>
   </div>
 <% end %>
