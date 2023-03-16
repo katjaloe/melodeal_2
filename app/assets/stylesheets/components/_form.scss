@@ -78,13 +78,19 @@ input#password.form-control.password.optional {
 //     align-items: end;
 // }
 
-.simple_form filter {
+.simple_form.filter {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    margin-bottom: 1rem;
 }
 
 .filter_location {
   width: 65%;
+  margin-bottom: 0 !important;
 }
 
+.find-button {
+  width: 30%;
+  height: 38px;
+}
