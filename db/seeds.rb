@@ -89,7 +89,7 @@ puts "Creating Musicians"
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
     price: 350,
     hours: 4,
     musician_id: cello_female_1.id
@@ -97,7 +97,7 @@ puts "Creating Musicians"
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id: cello_female_1.id
@@ -122,7 +122,7 @@ piano_male_2.photo.attach(io: file, filename: 'musician.png', content_type: 'ima
 
 Package.create!(
   title: "Package Large",
-  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
   price: 350,
   hours: 4,
   musician_id: piano_male_2.id
@@ -130,7 +130,7 @@ Package.create!(
 
 Package.create!(
   title: "Package Small",
-  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
   price: 200,
   hours: 2,
   musician_id: piano_male_2.id
@@ -163,7 +163,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id: cello_male_1.id
@@ -187,7 +187,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id: guitar_male_1.id
@@ -195,7 +195,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id: guitar_male_1.id
@@ -220,7 +220,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id: vocal_female_1.id
@@ -228,7 +228,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id: vocal_female_1.id
@@ -252,7 +252,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id: cello_male_2.id
@@ -260,7 +260,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id: cello_male_2.id
@@ -284,7 +284,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id:  guitar_male_2.id
@@ -292,7 +292,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id:  guitar_male_2.id
@@ -317,7 +317,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id:  guitar_male_2.id
@@ -325,7 +325,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id:  guitar_male_2.id
@@ -349,7 +349,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Large",
-    description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 350,
     hours: 4,
     musician_id:  violin_female_1.id
@@ -357,7 +357,7 @@ Package.create!(
 
   Package.create!(
     title: "Package Small",
-    description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+    description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
     price: 200,
     hours: 2,
     musician_id:  violin_female_1.id
@@ -382,7 +382,7 @@ guitar_female_1.photo.attach(io: file, filename: 'musician.png', content_type: '
 
 Package.create!(
   title: "Package Large",
-  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 350,
   hours: 4,
   musician_id:  guitar_female_1.id
@@ -390,7 +390,7 @@ Package.create!(
 
 Package.create!(
   title: "Package Small",
-  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 200,
   hours: 2,
   musician_id:  guitar_female_1.id
@@ -415,7 +415,7 @@ vocal_female_2.photo.attach(io: file, filename: 'musician.png', content_type: 'i
 
 Package.create!(
   title: "Package Large",
-  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 350,
   hours: 4,
   musician_id:  vocal_female_2.id
@@ -423,7 +423,7 @@ Package.create!(
 
 Package.create!(
   title: "Package Small",
-  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 200,
   hours: 2,
   musician_id:  vocal_female_2.id
@@ -448,7 +448,7 @@ piano_male_1.photo.attach(io: file, filename: 'musician.png', content_type: 'ima
 
 Package.create!(
   title: "Package Large",
-  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 350,
   hours: 4,
   musician_id:  piano_male_1.id
@@ -456,7 +456,7 @@ Package.create!(
 
 Package.create!(
   title: "Package Small",
-  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 200,
   hours: 2,
   musician_id:  piano_male_1.id
@@ -482,7 +482,7 @@ violin_female_2.photo.attach(io: file, filename: 'musician.png', content_type: '
 
 Package.create!(
   title: "Package Large",
-  description: "I will play 4 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 350,
   hours: 4,
   musician_id:  violin_female_2.id
@@ -490,101 +490,10 @@ Package.create!(
 
 Package.create!(
   title: "Package Small",
-  description: "I will play 2 hours at your event. I would have two breaks with 10 minutes, besides that you will listen to the best live music!",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
   price: 200,
   hours: 2,
   musician_id:  violin_female_2.id
 )
 
-
-# 10.times do
-#   musicians_katja = Musician.create!(
-#     first_name: Faker::Name.male_first_name,
-#     last_name: Faker::Name.last_name,
-#     nickname: Faker::Music.band,
-#     location: location.sample,
-#     description: description.sample,
-#     type_of_musician: type_of_musician.sample,
-#     youtube_link: Faker::Internet.url,
-#     spotify_link: Faker::Internet.url,
-#     user: katja
-#   )
-
-#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
-#   musicians_katja.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-# end
-
-# 10.times do
-#   musicians_louise = Musician.create!(
-#     first_name: Faker::Name.female_first_name,
-#     last_name: Faker::Name.last_name,
-#     nickname: Faker::Music.band,
-#     location: location.sample,
-#     description: description.sample,
-#     type_of_musician: type_of_musician.sample,
-#     youtube_link: Faker::Internet.url,
-#     spotify_link: Faker::Internet.url,
-#     user: louise
-#   )
-
-#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=female")
-#   musicians_louise.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-# end
-
-# 10.times do
-#   @musicians_besher = Musician.create!(
-#     first_name: Faker::Name.male_first_name,
-#     last_name: Faker::Name.last_name,
-#     nickname: Faker::Music.band,
-#     location: location.sample,
-#     description: description.sample,
-#     type_of_musician: type_of_musician.sample,
-#     youtube_link: Faker::Internet.url,
-#     spotify_link: Faker::Internet.url,
-#     user: besher
-#   )
-
-#   file = URI.open("https://xsgames.co/randomusers/avatar.php?g=male")
-#   @musicians_besher.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
-# end
-
 puts "created #{Musician.count} musicians"
-
-# puts "creating packages"
-
-# Musician.all.each do |musician|
-#   Package.create!(
-#     description: "You will get 2 hours of live music. I can play every song you like!",
-#     price: 200,
-#     hours: 2,
-#     musician_id: musician.id
-#   )
-
-#   Package.create!(
-#     description: "I will play 4 hours at your event. I would have to breaks with 10 minutes, besides that you will listen to the best live music!",
-#     price: 350,
-#     hours: 4,
-#     musician_id: musician.id
-#   )
-# end
-
-# # @musicians_besher.each do |musician|
-# #   Package.create!(
-# #     description: "I will play 4 hours at your event. I would have to breaks with 10 minutes, besides that you will listen to the best live music!",
-# #     price: 350,
-# #     hours: 4,
-# #     musician_id: musician.id
-# #   )
-# # end
-
-# # Musician.all.each do |musician|
-# #   Package.create!(
-# #     description: "Package Large",
-# #     price: rand(310..500),
-# #     hours: rand(3..5),
-# #     musician_id: musician.id
-# #   )
-# # end
-
-
-# puts "created #{Package.count} packages"
