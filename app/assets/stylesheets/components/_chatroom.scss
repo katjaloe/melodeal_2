@@ -1,6 +1,6 @@
 .chatroom {
   background: $rose-secondary;
-  margin-top: 9px;
+  margin-top: 20px;
   margin-bottom: 30px;
   height: calc(100vh - 75px);
   display: flex;
@@ -19,6 +19,7 @@
     height: 100%;
     overflow: scroll;
     padding: 1rem;
+    background-color: $rose-secondary;
   }
 
   #new_message {
@@ -28,6 +29,10 @@
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  p {
+    background-color: white;
   }
 }
 

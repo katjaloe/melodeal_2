@@ -1,63 +1,76 @@
-<div class="container show-card d-flex flex-column">
   <div class="d-flex align-items-center">
-    <%= image_tag(musician.photo, class: "profile") %>
+    <% if musician.photo.attached? %>
+      <%= image_tag(musician.photo, class: "profile") %>
+    <% else %>
+      <%= image_tag message.user.photo, class: "profile" %>
+    <% end %>
     <h3><b><%= musician.first_name %> <%= musician.last_name  %></b></h3>
   </div>
 
-
   <p class="about"><%= @musician.type_of_musician %> <br> &#128205; <%= @musician.location %></p>
+  <p><%= @musician.description %></p>
 
-  <div class="d-flex align-items-center">
-
+  <%# <div class="d-flex align-items-center"> %>
     <div class="package-container">
-      <div class="accordion open" id="accordionExample">
-        <div class="package-accordion-container d-flex space-between">
-          <% musician.packages.each do |package| %>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= package.id %>" aria-expanded="false" aria-controls="collapse">
-                    Here will be the Package Titel
-                </button>
-              </h2>
-              <div id="collapse<%=package.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body d-flex flex-column">
-                  <p> <%= package.description %> <br> Hours: <%= package.hours.to_i %> <br> Price: <%= package.price.to_i %> € </p>
-                  <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
-                    Book!
+      <% musician.packages.each do |package| %>
+        <div class="accordion open" id="accordionExample">
+          <%# <div class="package-accordion-container d-flex space-between"> %>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= package.id %>" aria-expanded="false" aria-controls="collapse">
+                      <%= package.title %>
                   </button>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Book your MeloDeal with <%= @musician.first_name %> </h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f|  %>
-                            <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
-                            <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "startDate" } }, label: "Choose the date and time!" %>
-                            <div class="modal-footer">
-                              <p> <%= f.submit class: "btn-first"%></p>
-                            </div>
-                         <% end %>
-                        </div>
-                      </div>
-                    </div>
+                </h2>
+                <div id="collapse<%=package.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body d-flex flex-column">
+                    <p> <%= package.description %> <br> Hours: <%= package.hours.to_i %> <br> Price: <%= package.price.to_i %> € </p>
+                    <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
+                      Book!
+                    </button>
                   </div>
-                </div>
+                <%# </div> %>
               </div>
+            </div>
+        </div>
+      <% end %>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Book your MeloDeal with <%= @musician.first_name %> </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f|  %>
+                  <%= f.hidden_field :package_id, data: {booking_target: "input"}%>
+                  <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "startDate" } }, label: "Choose the date and time!" %>
+                    <div class="modal-footer">
+                      <p> <%= f.submit class: "btn-first"%></p>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-<% end %>
-    <div class="package-button">
-      <% if @user.id == @musician.user_id %>
-      <button type="button" class="btn btn-second-orange mb-4">
-        <%= link_to "Create Package", new_musician_package_path(@musician) %>
-      </button>
+    <%# </div> %>
+
+    <div class="review-container">
+      <% @musician.reviews.each do |review| %>
+      <small> <%= review.user.first_name %> - <%=review.created_at.strftime("%e. %b %Y")%>
+          <% review.rating.round.times do %>
+            <i class="fa fa-star rating-color"></i>
+          <% end %>
+          <%= review.content %></small>
+        <hr>
       <% end %>
     </div>
 
+
+  <div class="package-button">
+    <% if @user.id == @musician.user_id %>
+      <button type="button" class="btn btn-second-orange mb-4">
+        <%= link_to "Create Package", new_musician_package_path(@musician) %>
+      </button>
+    <% end %>
   </div>
-</div>
-</div>

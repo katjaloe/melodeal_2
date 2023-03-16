@@ -7,6 +7,8 @@
     user-select: none;
     color: $brown-secondary;
     font-family: $headers-font;
+    margin-top: 20px;
+    margin-bottom: 20p;
 
 
     h3 {
@@ -35,6 +37,7 @@
       text-align: left;
       padding-right: 300px;
     }
+
 
   //   .btn {
   //     margin: 30px 15px;
@@ -97,11 +100,13 @@
 }
 
 .package-container {
-  width: 500px;
+  width: 100%;
   margin: 10 auto;
   background-color: $rose-secondary;
   border-radius: 15px;
   margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   .accordion-item {
   margin: 15px;
