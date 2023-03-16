@@ -1,0 +1,22 @@
+.social-links-musician-container {
+  align-items: center;
+
+}
+
+.social-links musician {
+  display: flex;
+  justify-content: center;
+
+  .fa-brands {
+    color: #F5783F;
+    opacity: 1;
+    text-decoration: none;
+    font-size: 60px;
+    padding: 0px 10px;
+  }
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: $rose-secondary;
+}
