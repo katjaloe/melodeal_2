@@ -1,11 +1,11 @@
 .social-links-musician-container {
-
+  align-items: center;
 
 }
 
-.social-links-musician {
+.social-links musician {
   display: flex;
-  align-items: center;
+  justify-content: center;
 
   .fa-brands {
     color: #F5783F;

@@ -73,6 +73,15 @@
 //     border-radius: 5px 5px 0 0;
 // }
 
+.profile-show {
+  width: 170px;
+  bottom: -20px;
+  left: 15px;
+  border-radius: 50%;
+  border: 1px solid $brown-secondary;
+  padding: 0px;
+  font: $body-font;
+}
 .profile {
     position: relative;
     width: 170px;
@@ -164,4 +173,23 @@
 
 .accordion-item:not(:first-of-type) {
   border-top: 1px solid #F5783F;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+
+  h3 {
+    text-align: center;
+    text-indent: 190px;
+  }
+
+  h4 {
+    margin-top: auto;
+    text-align: center;
+    text-indent: 190px;
+  }
+
+
 }

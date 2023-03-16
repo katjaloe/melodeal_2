@@ -1,17 +1,22 @@
   <div class="d-flex align-items-center">
-    <% if musician.photo.attached? %>
-      <%= image_tag(musician.photo, class: "profile") %>
-    <% else %>
-      <%= image_tag message.user.photo, class: "profile" %>
-    <% end %>
-    <h3><b><%= musician.first_name %> <%= musician.last_name  %></b></h3>
+    <div class="header-container">
+        <% if musician.photo.attached? %>
+          <%= image_tag(musician.photo, class: "profile-show") %>
+        <% else %>
+          <%= image_tag message.user.photo, class: "profile-show" %>
+        <% end %>
+      <div class="info-container">
+        <h3><b><%= musician.first_name %> <%= musician.last_name  %></b></h3>
+        <h4><%= @musician.type_of_musician %> Artist</h4>
+        <br>
+        <h4>&#128205; <%= @musician.location %></p></h4>
+        <%= render "shared/social_links_musician", musician: @musician %>
+      </div>
+    </div>
   </div>
 
   <p class="about">
-  <%= @musician.type_of_musician %> Artist
-  <br>
-  &#128205; <%= @musician.location %></p>
-  <%= render "shared/social_links_musician", musician: @musician %>
+
   <p class="bg-white p-4"><%= @musician.description %></p>
 
   <%# <div class="d-flex align-items-center"> %>
