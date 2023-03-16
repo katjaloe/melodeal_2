@@ -1,9 +1,44 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
+@font-face {
+  font-family: "Poppins";
+  src: font-url("Poppins/Poppins-Light.ttf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: font-url("Poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: font-url("Poppins/Poppins-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sintony";
+  src: font-url("Sintony/Sintony-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sintony";
+  src: font-url("Sintony/Sintony-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 // Define fonts for body and headers
-$body-font: "Work Sans", "Sintony", "sans-serif";
-$headers-font: "Nunito", "Poppins", "sans-serif";
+$body-font: "Sintony", "sans-serif";
+$headers-font: "Poppins", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
