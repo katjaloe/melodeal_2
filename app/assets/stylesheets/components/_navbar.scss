@@ -8,6 +8,7 @@
 
   .nav-link {
     color: $orange_primary;
+    margin-right: 15px;
   }
    .nav-link:hover {
     color: $rose-secondary;
@@ -25,4 +26,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-left: 20px;
+}
+
+.container-fluid {
+  margin-right: 20px;
 }
