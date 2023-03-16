@@ -29,7 +29,7 @@
 </div>
 
 
-
+<% if @user.musicians.present? %>
 <div class="bookings-container mt-4 ">
   <h3>See your upcoming gigs:</h3>
     <div class ="bookings-accordion-container">
@@ -48,3 +48,4 @@
       <% end %>
     </div>
 </div>
+<% end %>

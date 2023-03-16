@@ -7,8 +7,12 @@
     <h3><b><%= musician.first_name %> <%= musician.last_name  %></b></h3>
   </div>
 
-  <p class="about"><%= @musician.type_of_musician %> <br> &#128205; <%= @musician.location %></p>
-  <p><%= @musician.description %></p>
+  <p class="about">
+  <%= @musician.type_of_musician %> Artist
+  <br>
+  &#128205; <%= @musician.location %></p>
+  <%= render "shared/social_links_musician", musician: @musician %>
+  <p class="bg-white p-4"><%= @musician.description %></p>
 
   <%# <div class="d-flex align-items-center"> %>
     <div class="package-container">
@@ -23,7 +27,10 @@
                 </h2>
                 <div id="collapse<%=package.id%>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                   <div class="accordion-body d-flex flex-column">
-                    <p> <%= package.description %> <br> Hours: <%= package.hours.to_i %> <br> Price: <%= package.price.to_i %> € </p>
+                    <p> <%= package.description %></p>
+                    <br>
+                    <p> Hours: <%= package.hours.to_i %></p>
+                    <p>Price: <%= package.price.to_i %> € </p>
                     <button type="button" class="btn btn-first" data-bs-toggle="modal" data-bs-target="#exampleModal" data-action="click->booking#pushButton" data-booking-package-param="<%= package.id %>">
                       Book!
                     </button>
