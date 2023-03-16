@@ -189,7 +189,6 @@ Package.create!(
     musician_id: guitar_male_1.id
   )
 
-
   vocal_female_1 = Musician.create!(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
