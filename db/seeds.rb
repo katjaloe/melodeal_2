@@ -481,7 +481,7 @@ piano_male_3 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Piano",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -513,7 +513,7 @@ violin_female_3 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Violin",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -546,7 +546,7 @@ vocal_female_3 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -578,7 +578,7 @@ violin_female_4 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Violin",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -610,7 +610,7 @@ vocal_male_3 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -642,7 +642,7 @@ guitar_male_3 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Guitar",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -674,7 +674,7 @@ guitar_male_4 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Guitar",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -706,7 +706,7 @@ cello_male_3 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Cello",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -738,7 +738,7 @@ guitar_female_2 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Guitar",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -770,7 +770,7 @@ cello_male_4 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Cello",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -802,7 +802,7 @@ vocal_female_4 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -834,7 +834,7 @@ vocal_female_5 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -862,44 +862,75 @@ Package.create!(
   musician_id:  vocal_female_5.id
 )
 
-# piano_male_4 = Musician.create!(
-#   first_name: Faker::Name.male_first_name,
-#   last_name: Faker::Name.last_name,
-#   nickname: Faker::Music.band,
-#   location: "Berlin",
-#   description: description.sample,
-#   type_of_musician: "Piano",
-#   youtube_link: "https://www.youtube.com/@LeWagon/about",
-#   spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
-#   soundcloud_link: "https://soundcloud.com/RIHANNA",
-#   instagram_link: "https://www.instagram.com/womenintech/?hl=de",
-#   user: colleen
-# )
+guitar_male_5 = Musician.create!(
+  first_name: Faker::Name.male_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Guitar",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/t_MeloDeal/v1678996486/luke-thornton-8_RrNK5dg3k-unsplash_vtxyno.jpg")
+guitar_male_5.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
 
-# file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/t_meloDeal/v1678972896/Musician_new/mohamed-nohassi-qF5CZ4LwY_g-unsplash_xcdbux.jpg")
-# piano_male_4.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+Package.create!(
+  title: "Offer Large",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
+  price: 350,
+  hours: 4,
+  musician_id:  guitar_male_5.id
+)
 
-# Package.create!(
-#   title: "Offer Large",
-#   description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
-#   price: 350,
-#   hours: 4,
-#   musician_id: piano_male_4.id
-# )
+Package.create!(
+  title: "Offer Small",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
+  price: 200,
+  hours: 2,
+  musician_id:  guitar_male_5.id
+)
+piano_male_4 = Musician.create!(
+  first_name: Faker::Name.male_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: "Berlin",
+  description: description.sample,
+  type_of_musician: "Piano",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+)
 
-# Package.create!(
-#   title: "Offer Small",
-#   description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
-#   price: 200,
-#   hours: 2,
-#   musician_id: piano_male_4.id
-# )
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/t_MeloDeal/v1678972896/Musician_new/mohamed-nohassi-qF5CZ4LwY_g-unsplash_xcdbux.jpg")
+piano_male_4.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Offer Large",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
+  price: 350,
+  hours: 4,
+  musician_id: piano_male_4.id
+)
+
+Package.create!(
+  title: "Offer Small",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
+  price: 200,
+  hours: 2,
+  musician_id: piano_male_4.id
+)
 
 vocal_male_4 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -931,7 +962,7 @@ violin_male_1 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Violin",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -963,7 +994,7 @@ piano_male_5 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Piano",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -995,7 +1026,7 @@ vocal_female_6 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Vocal",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1027,7 +1058,7 @@ piano_female_1 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Piano",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1061,7 +1092,7 @@ piano_female_2 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Piano",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1094,7 +1125,7 @@ guitar_female_3 = Musician.create!(
   first_name: Faker::Name.female_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Guitar",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1126,7 +1157,7 @@ violin_male_2 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Violin",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1158,7 +1189,7 @@ guitar_male_5 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Guitar",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1190,7 +1221,7 @@ violin_male_3 = Musician.create!(
   first_name: Faker::Name.male_first_name,
   last_name: Faker::Name.last_name,
   nickname: Faker::Music.band,
-  location: "Berlin",
+  location: location.sample,
   description: description.sample,
   type_of_musician: "Violin",
   youtube_link: "https://www.youtube.com/@LeWagon/about",
@@ -1217,6 +1248,41 @@ Package.create!(
   hours: 2,
   musician_id:  violin_male_3.id
 )
+
+piano_female_3 = Musician.create!(
+  first_name: Faker::Name.female_first_name,
+  last_name: Faker::Name.last_name,
+  nickname: Faker::Music.band,
+  location: location.sample,
+  description: description.sample,
+  type_of_musician: "Piano",
+  youtube_link: "https://www.youtube.com/@LeWagon/about",
+  spotify_link: "https://open.spotify.com/show/3BnStSrxm2bsGwNrWAS8P9",
+  soundcloud_link: "https://soundcloud.com/RIHANNA",
+  instagram_link: "https://www.instagram.com/womenintech/?hl=de",
+  user: colleen
+
+)
+file = URI.open("https://res.cloudinary.com/dpki23ark/image/upload/t_MeloDeal/v1678995364/cheerful-young-woman-pianist-sits-piano-leafing-through-notes_zwvftc.jpg")
+piano_female_3.photo.attach(io: file, filename: 'musician.png', content_type: 'image/png')
+
+Package.create!(
+  title: "Offer Large",
+  description: "I will be playing 4h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it.",
+  price: 350,
+  hours: 4,
+  musician_id: piano_female_3.id
+)
+
+Package.create!(
+  title: "Offer Small",
+  description: "I will be playing 2h for your event, during which, there will be two 10 minutes intermissions, hopefully, you will enjoy my show as much as I enjoy creating it. ",
+  price: 200,
+  hours: 2,
+  musician_id: piano_female_3.id
+)
+
+
 
 puts "created #{Musician.count} musicians"
 puts "created #{Package.count} packages"
